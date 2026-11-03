@@ -1,0 +1,177 @@
+{{define "key-colors"}}<span style="--swatch: var(--neg-0)"></span><span style="--swatch: var(--neg-1)"></span><span style="--swatch: var(--pos-1)"></span><span style="--swatch: var(--pos-0)"></span><span class="gap"></span><span style="--swatch: var(--resid-0)"></span><span class="gap"></span><span style="--swatch: var(--group-party-democrat)"></span><span style="--swatch: var(--group-party-republican)"></span><span class="gap"></span><span style="--swatch: var(--highlight)"></span>{{end}}
+{{define "content"}}
+<header>
+	<h1>{{.Title}}</h1>
+	<p>
+		Colors we use on the site.
+	</p>
+</header>
+<section aria-labelledby="brand">
+	<h2 id="brand">Brand colors</h2>
+	<p>
+		These are some of our original brand colors.
+	</p>
+	<table class="colors">
+		<thead><tr><th scope="col"></th><th scope="col" class="left">Token</th><th scope="col" class="where">What it is</th><th scope="col">Value</th></tr></thead>
+		<tbody>
+			<tr style="--swatch: var(--paper)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--paper</code></th><td class="where">Background ("paper").</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--ink)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--ink</code></th><td class="where">Text, wordmark ("ink").</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--gray)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--gray</code></th><td class="where">Backgrounds: page opening and footer.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--purple)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--purple</code></th><td class="where">Brand accent.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--orange)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--orange</code></th><td class="where">Secondary color.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--gold)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--gold</code></th><td class="where">Tertiary color.</td><td class="value"><code></code></td></tr>
+		</tbody>
+	</table>
+</section>
+<section aria-labelledby="ladder">
+	<h2 id="ladder">Site grays</h2>
+	<p>
+		We mix our ink color toward our paper color in OKLab to make a ladder of interface grays.
+		Our brand gray is also part of this ladder; it coincides with a 94% mix value.
+	</p>
+	<div class="strip" aria-hidden="true">
+		<span style="--swatch: var(--ink)"></span><span style="--swatch: var(--rung-20)"></span><span style="--swatch: var(--rung-45)"></span><span style="--swatch: var(--rung-65)"></span><span style="--swatch: var(--rung-85)"></span><span style="--swatch: var(--gray)"></span><span style="--swatch: var(--paper)"></span>
+	</div>
+	<table class="colors">
+		<thead><tr><th scope="col"></th><th scope="col" class="left">Token</th><th scope="col" class="left">Rung</th><th scope="col" class="where">Where</th><th scope="col">Value</th></tr></thead>
+		<tbody>
+			<tr style="--swatch: var(--ink-2)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--ink-2</code></th><td class="left"><code>--rung-20</code></td><td class="where">Secondary text and marks, such as legends, datelines, notes and link underlines.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--ink-3)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--ink-3</code></th><td class="left"><code>--rung-45</code></td><td class="where">Chart gray, such as axis labels and a line in no color.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--resid-0)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--resid-0</code><br><code>--chart-axis</code></th><td class="left"><code>--rung-65</code></td><td class="where">A residual's bar, such as not sure, and a chart's axis line and pointer.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--rule)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--rule</code><br><code>--chart-grid</code><br><code>--resid-1</code></th><td class="left"><code>--rung-85</code></td><td class="where">Hairlines: page rules, chart gridlines, and a residual's lighter step.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--paper-2)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--paper-2</code></th><td class="left"><code>--gray</code></td><td class="where">Backgrounds: page opening and footer.</td><td class="value"><code></code></td></tr>
+		</tbody>
+	</table>
+</section>
+<section aria-labelledby="scale">
+	<h2 id="scale">Diverging scale</h2>
+	<p>
+		We use this diverging scale for questions that have two sides: darkest at each end and lighter toward the center.
+		The purples are the concern, too-little, etc., side.
+		The oranges are the opposite: excited, somewhat excited, too-much, etc.
+		Each lighter step is its pole mixed halfway (50%) toward our paper, in OKLab.
+		We use a gray for residuals, such as not sure.
+	</p>
+	<div class="strip" aria-hidden="true">
+		<span style="--swatch: var(--neg-0)"></span><span style="--swatch: var(--neg-1)"></span><span style="--swatch: var(--pos-1)"></span><span style="--swatch: var(--pos-0)"></span><span class="gap"></span><span style="--swatch: var(--resid-0)"></span>
+	</div>
+	<table class="colors">
+		<thead><tr><th scope="col"></th><th scope="col" class="left">Token</th><th scope="col" class="left">Derivation</th><th scope="col" class="where">For example</th><th scope="col">Value</th></tr></thead>
+		<tbody>
+			<tr style="--swatch: var(--neg-0)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--neg-0</code></th><td class="left">Orange.</td><td class="where">Very excited.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--neg-1)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--neg-1</code></th><td class="left"><code data-text="--neg-1"></code></td><td class="where">Somewhat excited.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--pos-1)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--pos-1</code></th><td class="left"><code data-text="--pos-1"></code></td><td class="where">Somewhat concerned.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--pos-0)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--pos-0</code></th><td class="left">Purple.</td><td class="where">Very concerned.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--resid-0)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--resid-0</code></th><td class="left"><code>--rung-65</code></td><td class="where">Not sure.</td><td class="value"><code></code></td></tr>
+		</tbody>
+	</table>
+</section>
+<section aria-labelledby="parties">
+	<h2 id="parties">Parties</h2>
+	<p>
+		These are two special colors we use by convention for partisan charts.
+		In general, they were chosen to match the strength of our brand purple and orange, their distance from each other under color-blindness tests, and proximity to recognizable red and blues.
+	</p>
+	<div class="strip" aria-hidden="true">
+		<span style="--swatch: var(--group-party-democrat)"></span><span style="--swatch: var(--group-party-republican)"></span>
+	</div>
+	<table class="colors">
+		<thead><tr><th scope="col"></th><th scope="col" class="left">Token</th><th scope="col" class="where">Line</th><th scope="col">Value</th></tr></thead>
+		<tbody>
+			<tr style="--swatch: var(--group-party-democrat)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--group-party-democrat</code></th><td class="where">Democrats.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--group-party-republican)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--group-party-republican</code></th><td class="where">Republicans.</td><td class="value"><code></code></td></tr>
+		</tbody>
+	</table>
+</section>
+<section aria-labelledby="category">
+	<h2 id="category">Category palette</h2>
+	<p>
+		We have a four-category palette for line charts that aren't a response (diverging scale colors) or a party (partisan colors), such as an age group.
+		They are: our ink solid, our ink dashed, chart gray solid, chart gray dashed.
+	</p>
+	<figure>
+		<ul class="legend lines" aria-hidden="true">
+			<li style="--color: var(--category-1)">First</li>
+			<li style="--color: var(--category-2); --dash: var(--category-2-dash)">Second</li>
+			<li style="--color: var(--category-3)">Third</li>
+			<li style="--color: var(--category-4); --dash: var(--category-4-dash)">Fourth</li>
+		</ul>
+	</figure>
+</section>
+<section aria-labelledby="margin">
+	<h2 id="margin">Margins of error</h2>
+	<p>
+		We create a trend line's margin of error from the line's own color at one opacity, <code>--band-opacity</code>, <code data-text="--band-opacity"></code>, over paper.
+		A bar's margin of error is a whisker across its end, in our ink.
+	</p>
+	<table class="colors">
+		<thead><tr><th scope="col">Line</th><th scope="col">Band</th><th scope="col" class="left">Token</th><th scope="col" class="where">For example</th><th scope="col">Value</th></tr></thead>
+		<tbody>
+			<tr style="--swatch: var(--ink)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--ink</code></th><td class="where">All adults, a total, or a first or second category line.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--group-party-democrat)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--group-party-democrat</code></th><td class="where">Democrats.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--group-party-republican)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--group-party-republican</code></th><td class="where">Republicans.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--ink-3)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--ink-3</code></th><td class="where">A third or fourth category line. Its band is paler than the grid.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--pos-0)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--pos-0</code></th><td class="where">Very concerned.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--pos-1)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--pos-1</code></th><td class="where">Somewhat concerned.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--neg-1)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--neg-1</code></th><td class="where">Somewhat excited.</td><td class="value"><code></code></td></tr>
+			<tr style="--swatch: var(--neg-0)"><td><span class="swatch"></span></td><td><span class="swatch band"></span></td><th scope="row" class="left"><code>--neg-0</code></th><td class="where">Very excited.</td><td class="value"><code></code></td></tr>
+		</tbody>
+	</table>
+</section>
+<section aria-labelledby="highlighter">
+	<h2 id="highlighter">Highlighter</h2>
+	<p>
+		We create the highlighter color from our brand gold's hue at the hairline gray's lightness.
+	</p>
+	<table class="colors">
+		<thead><tr><th scope="col"></th><th scope="col" class="left">Token</th><th scope="col" class="where">Derivation</th><th scope="col">Value</th></tr></thead>
+		<tbody>
+			<tr style="--swatch: var(--highlight)"><td><span class="swatch"></span></td><th scope="row" class="left"><code>--highlight</code></th><td class="where"><code data-text="--highlight"></code></td><td class="value"><code></code></td></tr>
+		</tbody>
+	</table>
+	<p>
+		In prose, we use the highlighter color to call attention to <strong class="finding">key findings</strong>.
+	</p>
+</section>
+<section aria-labelledby="color-blindness">
+	<h2 id="color-blindness">Color blindness</h2>
+	<p>
+		Our key colors as they would be seen by color-blind persons.
+	</p>
+	<figure>
+		<figcaption>Original</figcaption>
+		<div class="strip" aria-hidden="true">{{template "key-colors"}}</div>
+	</figure>
+	<figure>
+		<figcaption>Deuteranopia, no green cones</figcaption>
+		<div class="strip" style="filter: url(#deuteranopia)" aria-hidden="true">{{template "key-colors"}}</div>
+	</figure>
+	<figure>
+		<figcaption>Protanopia, no red cones</figcaption>
+		<div class="strip" style="filter: url(#protanopia)" aria-hidden="true">{{template "key-colors"}}</div>
+	</figure>
+	{{- /* The simulations: Machado, Oliveira and Fernandes (2009), severity 1, as matrices on linear RGB. */}}
+	<svg width="0" height="0" aria-hidden="true">
+		<filter id="deuteranopia" color-interpolation-filters="linearRGB"><feColorMatrix type="matrix" values="0.367322 0.860646 -0.227968 0 0  0.280085 0.672501 0.047413 0 0  -0.011820 0.042940 0.968881 0 0  0 0 0 1 0"/></filter>
+		<filter id="protanopia" color-interpolation-filters="linearRGB"><feColorMatrix type="matrix" values="0.152286 1.052583 -0.204868 0 0  0.114503 0.786281 0.099216 0 0  -0.003882 -0.048116 1.051998 0 0  0 0 0 1 0"/></filter>
+	</svg>
+</section>
+{{- /* The values: a derivation is its token's text as the browser holds it, and a value is the row's last swatch as painted, read from a pixel over the paper, so a band reads as seen. */}}
+<script>
+	(function () {
+		const root = getComputedStyle(document.documentElement);
+		for (const code of document.querySelectorAll("[data-text]")) code.textContent = root.getPropertyValue(code.dataset.text).trim();
+		const pixel = document.createElement("canvas").getContext("2d", { willReadFrequently: true });
+		const paper = getComputedStyle(document.body).backgroundColor;
+		for (const cell of document.querySelectorAll(".value")) {
+			const swatches = cell.parentElement.querySelectorAll(".swatch");
+			pixel.fillStyle = paper;
+			pixel.fillRect(0, 0, 1, 1);
+			pixel.fillStyle = getComputedStyle(swatches[swatches.length - 1]).backgroundColor;
+			pixel.fillRect(0, 0, 1, 1);
+			const [r, g, b] = pixel.getImageData(0, 0, 1, 1).data;
+			cell.firstElementChild.textContent = "#" + [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("");
+		}
+	})();
+</script>
+{{end}}

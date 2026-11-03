@@ -1,0 +1,12 @@
+.DS_Store
+
+.env
+
+raws/
+*.zip
+*.zip.age.part
+Klim-Order-*/
+
+scratch/
+
+build/

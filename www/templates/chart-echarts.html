@@ -1,0 +1,15 @@
+{{define "chart" -}}
+<figure class="chart {{.Form}}" id="{{.ID}}">
+		<figcaption><h3>{{.Title}}</h3><p class="downloads"><a class="download" href="{{.ID}}.tsv" download="americans-on-ai-{{.ID}}.tsv" aria-label="Download data as TSV">Data <span aria-hidden="true">↓</span></a></p>{{with .Subtitle}}<p class="subtitle">{{.}}</p>{{end}}</figcaption>
+		<div class="plot"></div>
+		<script type="application/json">{{chartData .Chart}}</script>
+		{{- with .Wordings}}
+		<ul class="wording">{{range .}}<li>{{.}}</li>{{end}}</ul>
+		{{- end}}
+		{{- $f := fielded .Chart}}
+		<footer class="foot">
+			<p>{{$f.Label}} <time datetime="{{$f.Span.StartDate}}">{{$f.Span.Start}}</time>{{with $f.Span.End}}{{$f.Join}}<time datetime="{{$f.Span.EndDate}}">{{.}}</time>{{end}}{{if $f.Pooled}} (<a href="{{.Root}}data/#pools">pooled</a>){{end}}{{with moeNote .MOE}} / {{.}}{{end}}</p>
+			<a href="https://americanson.ai/">americanson.ai</a>
+		</footer>
+	</figure>
+{{- end}}

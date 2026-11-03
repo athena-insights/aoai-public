@@ -1,0 +1,199 @@
+{{/* Groups' body: the introduction and the sections, in djot, which groups.html places with {{body}}. */}}
+{{/* The introduction, as the Overall page's: a lede on which dimensions divide most, then the takeaways as a list, one per section in the sections' order, each a run-in in bold with its figures from the latest pool, no highlighter. The dimensions the lede names are the four whose gaps are widest and most often beyond the margin on the latest pool. Sex is not among them, and the lede says so. */}}
+::: intro
+AI looks different depending on who you ask. Across the groups we survey, age, race, education and party show the clearest differences in how people feel about AI, what they see it doing in their lives, and what they want the government to do about it. Women and men differ least.
+
+Some of these gaps have held steady since we began tracking. Others have moved, most of all between Democrats and Republicans. Here are some key takeaways from our surveys so far, one for each group:
+
+- *Concern rises with age, and the oldest adults want the most from the government.* Among adults 65 and older, {{.GroupShare "age=65+" "concerned" "008+009"}} say they are concerned, compared to {{.GroupShare "age=18-34" "concerned" "008+009"}} of those 18 to 34, and {{.GroupShare "age=65+" "any-ai-harms" "008+009"}} call dealing with AI's harms a government priority, compared to {{.GroupShare "age=18-34" "any-ai-harms" "008+009"}}. Younger adults see more of AI around them and are less sure of what it will do.
+- *Women are more likely to be very concerned, and men to be excited.* Among women, {{.GroupShare "sex=Female" "very-concerned" "008+009"}} say they are very concerned, compared to {{.GroupShare "sex=Male" "very-concerned" "008+009"}} of men, and {{.GroupShare "sex=Male" "excited" "008+009"}} of men are excited, compared to {{.GroupShare "sex=Female" "excited" "008+009"}} of women. The sexes have converged on what AI is doing to family life.
+- *White adults are the most concerned about AI and Black adults the least, on nearly every measure.* Among white adults, {{.GroupShare "eth=White, non-Hispanic" "concerned" "008+009"}} say they are concerned, compared to {{.GroupShare "eth=Black, non-Hispanic" "concerned" "008+009"}} of Black adults, and {{.GroupShare "eth=White, non-Hispanic" "worse-jobs" "008+009"}} say AI is making job security worse, compared to {{.GroupShare "eth=Black, non-Hispanic" "worse-jobs" "008+009"}}. Black adults are the most likely to say the government is doing too much about AI.
+- *College graduates and higher earners see more of AI, expect more of it and want the government to do more.* Among graduates, {{.GroupShare "educ=BA+" "seeing-time" "008+009"}} see AI saving people time, compared to {{.GroupShare "educ=HS or less" "seeing-time" "008+009"}} of those with a high school education or less, and {{.GroupShare "educ=BA+" "already-unintended" "008+009"}} say AI is already behaving in ways its developers did not intend, compared to {{.GroupShare "educ=HS or less" "already-unintended" "008+009"}}.
+- *Democrats and Republicans have moved apart on concern and on loss of control.* Democrats have grown more concerned since {{.Month "001+002"}} ({{.GroupChange "party=Democrat" "concerned" "001+002" "008+009"}}), Republicans by half as much ({{.GroupChange "party=Republican" "concerned" "001+002" "008+009"}}). The gap on whether loss of control is already happening has widened from {{.Gap "party=Democrat" "party=Republican" "already-unintended" "001+002"}} to {{.Gap "party=Democrat" "party=Republican" "already-unintended" "008+009"}}. On every area of AI, Democrats are more likely to say the government is doing too little.
+
+{{photo "walkers.jpg" "A woman jogging with a pet stroller passes an older man walking two small white dogs, on a sunlit street lined with flowering shrubs" "@fujiphilm / Unsplash"}}
+:::
+
+{#age}
+## Age
+
+Most Americans of every age are concerned about AI, and *concern rises with age*{.finding}.
+Among adults 18 to 34, {{.GroupShare "age=18-34" "concerned" "008+009"}} say they are concerned.
+The share rises to {{.GroupShare "age=35-49" "concerned" "008+009"}} of those 35 to 49, {{.GroupShare "age=50-64" "concerned" "008+009"}} of those 50 to 64 and {{.GroupShare "age=65+" "concerned" "008+009"}} of those 65 and older.
+Excitement falls with age, from {{.GroupShare "age=18-34" "excited" "008+009"}} of adults 18 to 34 to {{.GroupShare "age=65+" "excited" "008+009"}} of those 65 and older.
+
+{{chart "excited-or-concerned-by-age"}}
+
+*Older adults are also the most likely to say AI is coming whether they want it or not, and the least likely to say they can shape it*{.finding}.
+Among adults 65 and older, {{.GroupShare "age=65+" "inevitable" "008+009"}} say AI is coming regardless and {{.GroupShare "age=65+" "can-shape" "008+009"}} say people like them can shape how much AI is part of their lives, compared to {{.GroupShare "age=18-34" "inevitable" "008+009"}} and {{.GroupShare "age=18-34" "can-shape" "008+009"}} of adults 18 to 34.
+
+{{chart "ours-to-shape-or-inevitable-by-age"}}
+
+*Younger adults see more of AI's effects in their communities*{.finding}.
+Among adults 18 to 34, {{.GroupShare "age=18-34" "seeing-time" "008+009"}} say they are seeing AI save people time on everyday tasks, or are starting to, compared to {{.GroupShare "age=65+" "seeing-time" "008+009"}} of those 65 and older.
+On people being pressured to do more, faster, the gap is wider: {{.GroupShare "age=18-34" "seeing-pressure" "008+009"}} to {{.GroupShare "age=65+" "seeing-pressure" "008+009"}}.
+
+{{chart "saving-time-by-age"}}
+
+*Younger adults are the least likely to expect the four transformative AI scenarios we track*{.finding}.
+On every one, adults 18 to 34 are less likely than those 65 and older to say it is likely or already happening, and more often say they are not sure.
+The gap is widest on AI making major scientific and medical breakthroughs: {{.GroupShare "age=18-34" "likely-breakthroughs" "008+009"}} to {{.GroupShare "age=65+" "likely-breakthroughs" "008+009"}}.
+
+{{chart "unlikely-or-likely-by-age"}}
+
+*Older adults are the most likely to say dealing with AI's harms should be a government priority*{.finding}.
+Among adults 65 and older, {{.GroupShare "age=65+" "any-ai-harms" "008+009"}} call it a top or important priority, compared to {{.GroupShare "age=18-34" "any-ai-harms" "008+009"}} of those 18 to 34.
+Older adults put most issues higher, though: on immigration the gap is {{.Gap "age=65+" "age=18-34" "any-immigration" "008+009"}}.
+
+{{chart "ai-harms-by-age"}}
+
+*Adults 18 to 34 became more likely to prioritize AI harms after Jacob Coxon's resignation*{.finding}.
+Their share rose from {{.GroupShare "age=18-34" "top-ai-harms" "005"}} in {{.When "005"}} to {{.GroupShare "age=18-34" "top-ai-harms" "006"}} in {{.When "006"}} ({{.GroupChange "age=18-34" "top-ai-harms" "005" "006"}}), and has been {{.GroupShare "age=18-34" "top-ai-harms" "007"}}, {{.GroupShare "age=18-34" "top-ai-harms" "008"}} and {{.GroupShare "age=18-34" "top-ai-harms" "009"}} since.
+
+*Adults 65 and older have been the most likely to call AI harms a top priority*{.finding}: {{.GroupShare "age=65+" "top-ai-harms" "009"}} in {{.When "009"}}, after a dip to {{.GroupShare "age=65+" "top-ai-harms" "008"}} in {{.When "008"}}.
+
+{{chart "ai-harms-top-priority-by-age-over-time"}}
+
+{{photo "artist.jpg" "A painter sits on a folding chair with their back to the street, their canvases leaning on the railings of a park" "@fujiphilm / Unsplash"}}
+
+{#sex}
+## Sex
+
+*Women are more likely to be very concerned about AI, and men to be excited*{.finding}.
+Among women, {{.GroupShare "sex=Female" "very-concerned" "008+009"}} say they are very concerned, compared to {{.GroupShare "sex=Male" "very-concerned" "008+009"}} of men.
+Among men, {{.GroupShare "sex=Male" "excited" "008+009"}} say they are excited, compared to {{.GroupShare "sex=Female" "excited" "008+009"}} of women.
+
+{{chart "excited-or-concerned-by-sex"}}
+
+*Women and men have converged on AI's effects on family life*{.finding}.
+In {{.Month "001+002"}}, women were more likely than men to say AI is making things worse on all four measures, from {{.Gap "sex=Female" "sex=Male" "worse-jobs" "001+002"}} on job security to {{.Gap "sex=Female" "sex=Male" "worse-children" "001+002"}} on children's well-being.
+In {{.Month "008+009"}} the sexes are level on job security, {{.GroupShare "sex=Female" "worse-jobs" "008+009"}} to {{.GroupShare "sex=Male" "worse-jobs" "008+009"}}, and on household finances, {{.GroupShare "sex=Female" "worse-finances" "008+009"}} to {{.GroupShare "sex=Male" "worse-finances" "008+009"}}.
+Women still lead on children's well-being, {{.GroupShare "sex=Female" "worse-children" "008+009"}} to {{.GroupShare "sex=Male" "worse-children" "008+009"}}.
+
+{{chart "better-or-worse-by-sex"}}
+
+Elsewhere the sexes differ little.
+Men are more likely to expect AI to make major scientific and medical breakthroughs, {{.GroupShare "sex=Male" "likely-breakthroughs" "008+009"}} to {{.GroupShare "sex=Female" "likely-breakthroughs" "008+009"}}, and women a little more likely to call dealing with AI's harms a government priority, {{.GroupShare "sex=Female" "any-ai-harms" "008+009"}} to {{.GroupShare "sex=Male" "any-ai-harms" "008+009"}}.
+
+{{photo "tunnel.jpg" "A crowd in an aquarium tunnel looks up at sharks and rays passing overhead" "@fujiphilm / Unsplash"}}
+
+{#race}
+## Race & Ethnicity
+
+*White adults are the most concerned about AI, and Black adults the least*{.finding}.
+Among white adults, {{.GroupShare "eth=White, non-Hispanic" "concerned" "008+009"}} say they are concerned, compared to {{.GroupShare "eth=Black, non-Hispanic" "concerned" "008+009"}} of Black adults and {{.GroupShare "eth=Hispanic" "concerned" "008+009"}} of Hispanic adults.
+Hispanic adults are the most likely to be excited, {{.GroupShare "eth=Hispanic" "excited" "008+009"}}, compared to {{.GroupShare "eth=White, non-Hispanic" "excited" "008+009"}} of white adults.
+White adults are also the most likely to say AI is coming whether they want it or not, {{.GroupShare "eth=White, non-Hispanic" "inevitable" "008+009"}}, compared to {{.GroupShare "eth=Black, non-Hispanic" "inevitable" "008+009"}} of Black adults and {{.GroupShare "eth=Hispanic" "inevitable" "008+009"}} of Hispanic adults.
+
+{{chart "excited-or-concerned-by-race"}}
+
+*White adults are the most likely to say AI is making family life worse, and Black adults the most likely to say it is making it better*{.finding}.
+On job security, {{.GroupShare "eth=White, non-Hispanic" "worse-jobs" "008+009"}} of white adults say AI is making it worse, compared to {{.GroupShare "eth=Black, non-Hispanic" "worse-jobs" "008+009"}} of Black adults and {{.GroupShare "eth=Hispanic" "worse-jobs" "008+009"}} of Hispanic adults.
+Among Black adults, {{.GroupShare "eth=Black, non-Hispanic" "better-jobs" "008+009"}} say it is making job security better, compared to {{.GroupShare "eth=White, non-Hispanic" "better-jobs" "008+009"}} of white adults.
+The gaps are widest on job security and children's well-being, and narrowest on household finances.
+
+{{chart "better-or-worse-by-race"}}
+
+*White adults are the most likely to expect AI to behave in ways its developers did not intend, and to say it already is*{.finding}.
+Among white adults, {{.GroupShare "eth=White, non-Hispanic" "likely-unintended" "008+009"}} say it is likely or already happening, compared to {{.GroupShare "eth=Black, non-Hispanic" "likely-unintended" "008+009"}} of Black adults and {{.GroupShare "eth=Hispanic" "likely-unintended" "008+009"}} of Hispanic adults.
+The share of white adults who say it is already happening has risen from {{.GroupShare "eth=White, non-Hispanic" "already-unintended" "001"}} in {{.When "001"}} to {{.GroupShare "eth=White, non-Hispanic" "already-unintended" "009"}} in {{.When "009"}} ({{.GroupChange "eth=White, non-Hispanic" "already-unintended" "001" "009"}}).
+
+{{chart "loss-of-control-by-race"}}
+
+*White adults are the most likely to say dealing with AI's harms should be a government priority*{.finding}.
+Among white adults, {{.GroupShare "eth=White, non-Hispanic" "any-ai-harms" "008+009"}} call it a top or important priority, compared to {{.GroupShare "eth=Black, non-Hispanic" "any-ai-harms" "008+009"}} of Black adults and {{.GroupShare "eth=Hispanic" "any-ai-harms" "008+009"}} of Hispanic adults.
+Black and Hispanic adults put jobs higher: {{.GroupShare "eth=Black, non-Hispanic" "top-jobs" "008+009"}} and {{.GroupShare "eth=Hispanic" "top-jobs" "008+009"}} call improving the job situation a top priority, compared to {{.GroupShare "eth=White, non-Hispanic" "top-jobs" "008+009"}} of white adults.
+
+{{chart "ai-harms-by-race"}}
+
+*White adults are the most likely to say the government is doing too little about AI, and Black adults the most likely to say it is doing too much*{.finding}.
+On AI's effects on workers and jobs, {{.GroupShare "eth=White, non-Hispanic" "little-workers" "008+009"}} of white adults say the government is doing too little, compared to {{.GroupShare "eth=Black, non-Hispanic" "little-workers" "008+009"}} of Black adults and {{.GroupShare "eth=Hispanic" "little-workers" "008+009"}} of Hispanic adults.
+Among Black adults, {{.GroupShare "eth=Black, non-Hispanic" "much-workers" "008+009"}} say it is doing too much, compared to {{.GroupShare "eth=White, non-Hispanic" "much-workers" "008+009"}} of white adults.
+The split is much the same on AI's effects on children and young people and on its environmental footprint.
+
+{{chart "too-much-or-too-little-by-race"}}
+
+{{photo "market.jpg" "A grocer bends over a counter in front of crates of onions and potatoes with handwritten price signs" "@fujiphilm / Unsplash"}}
+
+{#education}
+## Education & Income
+
+Education and income run together on AI, and most of what divides one divides the other.
+*Concern is highest in the middle of both*{.finding}: {{.GroupShare "educ=Some college" "concerned" "008+009"}} of those with some college say they are concerned, compared to {{.GroupShare "educ=HS or less" "concerned" "008+009"}} of those with a high school education or less and {{.GroupShare "educ=BA+" "concerned" "008+009"}} of college graduates.
+By income the shape is the same: {{.GroupShare "income=50k to <100k" "concerned" "008+009"}} of those earning $50,000 to under $100,000, compared to {{.GroupShare "income=<50k" "concerned" "008+009"}} of those earning less and {{.GroupShare "income=100k+" "concerned" "008+009"}} of those earning more.
+Graduates and higher earners are the most likely to be excited, {{.GroupShare "educ=BA+" "excited" "008+009"}} and {{.GroupShare "income=100k+" "excited" "008+009"}}, and the most likely to say AI is coming whether they want it or not, {{.GroupShare "educ=BA+" "inevitable" "008+009"}} of graduates to {{.GroupShare "educ=HS or less" "inevitable" "008+009"}} of those with a high school education or less.
+
+{{chart "excited-or-concerned-by-education-and-income"}}
+
+*College graduates and higher earners see more of AI's effects in their communities, good and bad*{.finding}.
+Among graduates, {{.GroupShare "educ=BA+" "seeing-time" "008+009"}} say they are seeing AI save people time on everyday tasks, or are starting to, compared to {{.GroupShare "educ=HS or less" "seeing-time" "008+009"}} of those with a high school education or less, and the gap by income is {{.Gap "income=100k+" "income=<50k" "seeing-time" "008+009"}}.
+More graduates also see people struggling to tell what's real from fake, {{.GroupShare "educ=BA+" "seeing-fake" "008+009"}} to {{.GroupShare "educ=HS or less" "seeing-fake" "008+009"}}.
+
+{{chart "saving-time-by-education-and-income"}}
+
+*On job security, college graduates and higher earners are the most likely to say AI is making things worse*{.finding}.
+Among graduates, {{.GroupShare "educ=BA+" "worse-jobs" "008+009"}} say so, compared to {{.GroupShare "educ=HS or less" "worse-jobs" "008+009"}} of those with a high school education or less, and the gap by income is {{.Gap "income=100k+" "income=<50k" "worse-jobs" "008+009"}}.
+On household finances, the groups are level.
+
+{{chart "job-security-by-education-and-income"}}
+
+*Graduates and higher earners are the most likely to say AI is already behaving in ways its developers did not intend*{.finding}.
+Among graduates, {{.GroupShare "educ=BA+" "already-unintended" "008+009"}} say it is already happening, compared to {{.GroupShare "educ=HS or less" "already-unintended" "008+009"}} of those with a high school education or less, and the gap by income is {{.Gap "income=100k+" "income=<50k" "already-unintended" "008+009"}}.
+
+{{chart "loss-of-control-by-education-and-income"}}
+
+*The gap by education has widened*{.finding}.
+Since {{.Month "001"}}, the share has risen among graduates from {{.GroupShare "educ=BA+" "already-unintended" "001"}} to {{.GroupShare "educ=BA+" "already-unintended" "009"}} ({{.GroupChange "educ=BA+" "already-unintended" "001" "009"}}), and among those with a high school education or less from {{.GroupShare "educ=HS or less" "already-unintended" "001"}} to {{.GroupShare "educ=HS or less" "already-unintended" "009"}} ({{.GroupChange "educ=HS or less" "already-unintended" "001" "009"}}).
+
+{{chart "already-loss-of-control-by-education-over-time"}}
+
+*Graduates and higher earners are the most likely to say the government is doing too little about AI*{.finding}, on every area we ask about.
+On AI's effects on workers and jobs, {{.GroupShare "educ=BA+" "little-workers" "008+009"}} of graduates say so, compared to {{.GroupShare "educ=HS or less" "little-workers" "008+009"}} of those with a high school education or less, and the gap by income is {{.Gap "income=100k+" "income=<50k" "little-workers" "008+009"}}.
+Those with a high school education or less and those earning under $50,000 are the most likely to say the government is doing too much, {{.GroupShare "educ=HS or less" "much-workers" "008+009"}} and {{.GroupShare "income=<50k" "much-workers" "008+009"}}.
+They are also less likely to call dealing with AI's harms a government priority, {{.GroupShare "educ=HS or less" "any-ai-harms" "008+009"}} to {{.GroupShare "educ=BA+" "any-ai-harms" "008+009"}} by education.
+
+{{chart "workers-and-jobs-by-education-and-income"}}
+
+{{photo "swing.jpg" "A child on a swing, in silhouette against a sunset sky, with flags and trees behind" "@fujiphilm / Unsplash"}}
+
+{#party}
+## Party
+
+Democrats are more concerned about AI than Republicans, {{.GroupShare "party=Democrat" "concerned" "008+009"}} to {{.GroupShare "party=Republican" "concerned" "008+009"}}, and *the parties have diverged on concern since Jacob Coxon's resignation, though the gap narrowed in late October*{.finding}.
+Concern among Democrats rose from {{.GroupShare "party=Democrat" "concerned" "005"}} in {{.When "005"}} to {{.GroupShare "party=Democrat" "concerned" "006"}} in {{.When "006"}}, and was {{.GroupShare "party=Democrat" "concerned" "009"}} in {{.When "009"}}.
+Republicans were at {{.GroupShare "party=Republican" "concerned" "009"}} in {{.When "009"}}, level with their late July high, after {{.GroupShare "party=Republican" "concerned" "008"}} in {{.When "008"}}.
+
+{{chart "concerned-by-party-over-time"}}
+
+Republicans are more excited, {{.GroupShare "party=Republican" "excited" "008+009"}} to {{.GroupShare "party=Democrat" "excited" "008+009"}}, and Democrats' excitement fell over the same period, from {{.GroupShare "party=Democrat" "excited" "005"}} to {{.GroupShare "party=Democrat" "excited" "009"}}.
+
+On much else the parties are alike.
+Democrats and Republicans are as likely to say AI is coming whether they want it or not, {{.GroupShare "party=Democrat" "inevitable" "008+009"}} and {{.GroupShare "party=Republican" "inevitable" "008+009"}}, and as likely to expect AI to become smarter than humans at most tasks, {{.GroupShare "party=Democrat" "likely-smarter" "008+009"}} and {{.GroupShare "party=Republican" "likely-smarter" "008+009"}}.
+
+*Democrats are more likely than Republicans to say AI is making family life worse*{.finding}, on all four measures we track.
+On job security, {{.GroupShare "party=Democrat" "worse-jobs" "008+009"}} of Democrats say AI is making it worse, compared to {{.GroupShare "party=Republican" "worse-jobs" "008+009"}} of Republicans.
+Republicans are more likely to say AI is making families' outlook on the future better, {{.GroupShare "party=Republican" "better-outlook" "008+009"}} to {{.GroupShare "party=Democrat" "better-outlook" "008+009"}}.
+
+{{chart "better-or-worse-by-party"}}
+
+*The parties agree that loss of control is likely, and differ on whether it is already happening*{.finding}.
+Among Democrats, {{.GroupShare "party=Democrat" "likely-unintended" "008+009"}} say AI behaving in ways its developers did not intend is likely or already happening, compared to {{.GroupShare "party=Republican" "likely-unintended" "008+009"}} of Republicans.
+But {{.GroupShare "party=Democrat" "already-unintended" "008+009"}} of Democrats say it is already happening, compared to {{.GroupShare "party=Republican" "already-unintended" "008+009"}} of Republicans, after a month in which OpenAI's agents disabled their own monitoring and Anthropic's took unintended actions on government websites.
+Republicans more often say it is likely but not here yet, {{.GroupShare "party=Republican" "likely-to-happen-unintended" "008+009"}} to {{.GroupShare "party=Democrat" "likely-to-happen-unintended" "008+009"}}.
+
+{{chart "loss-of-control-by-party"}}
+
+*Belief that loss of control is already happening has grown in both parties*{.finding} since {{.Month "001"}}: among Democrats from {{.GroupShare "party=Democrat" "already-unintended" "001"}} to {{.GroupShare "party=Democrat" "already-unintended" "009"}} ({{.GroupChange "party=Democrat" "already-unintended" "001" "009"}}) and among Republicans from {{.GroupShare "party=Republican" "already-unintended" "001"}} to {{.GroupShare "party=Republican" "already-unintended" "009"}} ({{.GroupChange "party=Republican" "already-unintended" "001" "009"}}).
+Among Democrats it has been a majority view since {{.When "007"}}.
+
+{{chart "already-loss-of-control-by-party-over-time"}}
+
+*Democrats are more likely than Republicans to say dealing with AI's harms should be a government priority*{.finding}, {{.GroupShare "party=Democrat" "any-ai-harms" "008+009"}} to {{.GroupShare "party=Republican" "any-ai-harms" "008+009"}}, and {{.GroupShare "party=Democrat" "top-ai-harms" "008+009"}} to {{.GroupShare "party=Republican" "top-ai-harms" "008+009"}} on a top priority alone.
+Still, the gap is small beside the parties' gaps on immigration and climate change, where Republicans lead by {{.Gap "party=Republican" "party=Democrat" "any-immigration" "008+009"}} and Democrats by {{.Gap "party=Democrat" "party=Republican" "any-climate" "008+009"}}.
+
+{{chart "how-much-of-a-priority-by-party"}}
+
+*Democrats are more likely than Republicans to say the government is doing too little about AI*{.finding}, on every issue and in every survey.
+The gap is widest on AI's environmental footprint ({{.Gap "party=Democrat" "party=Republican" "little-environment" "008+009"}}) and narrowest on American competitiveness ({{.Gap "party=Democrat" "party=Republican" "little-competitiveness" "008+009"}}), the issue where the fewest in either party say the government is doing too little.
+
+{{chart "too-much-or-too-little-by-party"}}

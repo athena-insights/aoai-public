@@ -1,0 +1,108 @@
+{{define "styles-base"}}
+<style>
+	@font-face { font-family: "American Grotesk"; font-weight: 400; font-display: block; src: url("{{.Root}}static/fonts/american-grotesk-regular.woff2") format("woff2"); }
+	@font-face { font-family: "American Grotesk"; font-weight: 700; font-display: block; src: url("{{.Root}}static/fonts/american-grotesk-bold.woff2") format("woff2"); }
+	@font-face { font-family: "American Grotesk Condensed"; font-weight: 700; font-display: block; src: url("{{.Root}}static/fonts/american-grotesk-condensed-bold.woff2") format("woff2"); }
+
+	:root {
+		--ratio: 1.2;          /* the type scale's ratio, Athena Insights' */
+		--leading-body: 1.5;   /* body text's line height */
+		--leading-tight: 1.1;  /* headings' */
+		--measure-ems: 32;     /* the prose's line length, in ems of body text: about 75 characters (not ch, a digit's width: American Grotesk's digits are half again as wide as its average character) */
+
+		--step-0: 1rem;                                  /* the strip, the navigation, the dateline, the footer, and a chart's subtitle, legend and labels */
+		--step--1: calc(var(--step-0) / var(--ratio));   /* the small print: a chart's wording and foot, a photo's credit, a footnote's mark, the crosstabs' heads and bases */
+		--step-1: calc(var(--step-0) * var(--ratio));   /* body, and chart titles in bold */
+		--step-2: calc(var(--step-1) * var(--ratio));   /* the overview's deck and lede */
+		--step-3: calc(var(--step-2) * var(--ratio));   /* section names */
+		--step-4: calc(var(--step-3) * var(--ratio));   /* page titles */
+		--step-5: calc(var(--step-4) * var(--ratio));   /* unused for now: the step between page titles and the headline */
+		--step-6: calc(var(--step-5) * var(--ratio));   /* the overview's headline */
+
+		--space-1: calc(var(--step-1) * var(--leading-body));
+		--space-00: calc(var(--space-1) / 2);
+		--space-000: calc(var(--space-1) / 4);
+		--space-2: calc(var(--space-1) * 2);
+		--space-3: calc(var(--space-1) * 4);
+
+		--measure: calc(var(--step-1) * var(--measure-ems));
+		--layout: calc(var(--measure) * var(--ratio) * var(--ratio));
+		--gutter: var(--space-1);
+
+		--text: "American Grotesk", system-ui, sans-serif;
+		--display: "American Grotesk Condensed", var(--text);
+
+		--paper: #fff;
+		--ink: #2e2e2e;         /* the wordmark's gray; oklch(0.32 0 0) */
+		--purple: #7100e9;      /* the brand's accent; oklch(0.49 0.27 293) */
+		--orange: #e97100;      /* the reports' other pole; oklch(0.68 0.18 51) */
+		--gold: #e5b400;        /* the highlighter's source; oklch(0.79 0.16 89) */
+		--gray: #f2f2f2;        /* the surfaces' gray; oklch(0.96 0 0), 94% of the way from the ink to the paper */
+		--rung-20: color-mix(in oklab, var(--ink), var(--paper) 20%);
+		--rung-45: color-mix(in oklab, var(--ink), var(--paper) 45%);
+		--rung-65: color-mix(in oklab, var(--ink), var(--paper) 65%);
+		--rung-85: color-mix(in oklab, var(--ink), var(--paper) 85%);
+		--ink-2: var(--rung-20);   /* secondary text and marks, such as legends and the links' underlines */
+		--ink-3: var(--rung-45);   /* the chart's gray, such as axis labels and a line in no color */
+		--rule: var(--rung-85);    /* hairlines */
+		--paper-2: var(--gray);    /* surfaces: the page's opening, and the footer */
+	}
+
+	*, *::before, *::after { box-sizing: border-box; }
+	h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+	img { max-width: 100%; height: auto; }
+	small { font-size: inherit; }
+	body { margin: 0; font: var(--step-1)/var(--leading-body) var(--text); color: var(--ink); background: var(--paper); }
+	h1, h2, h3 { line-height: var(--leading-tight); }
+	h1 { font-family: var(--display); }   /* its size is each frame's */
+
+	main > :is(header, section, .intro) > * + * { margin-block-start: var(--space-1); }
+	main > :is(header, section, .intro) > :is(h1, h2) + * { margin-block-start: var(--space-00); }   /* .intro here too: :is() takes its most specific argument's weight, so without it the block rule above would win */
+	main > header + section { margin-block-start: var(--space-2); }   /* where no strip follows the header */
+	main { padding-block-end: var(--space-3); }
+	main > :is(section, .intro) + section { margin-block-start: var(--space-2); }
+	html { scroll-padding-top: var(--space-2); }
+	@media (prefers-reduced-motion: no-preference) {
+		html { scroll-behavior: smooth; }
+	}
+
+	nav ul, nav ol, footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-000) var(--space-1); margin: 0; padding: 0; }
+	nav a, .social a { color: var(--ink-2); text-decoration: none; text-underline-offset: .3em; }
+	@media (hover: hover) {
+		nav a:hover, .social a:hover { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; }
+	}
+	nav a[aria-current] { color: var(--ink); text-decoration: underline; text-decoration-thickness: 2px; }
+	main :is(p, li) a { color: inherit; text-decoration-thickness: 1px; text-decoration-color: var(--ink-2); text-underline-offset: .3em; }
+	@media (hover: hover) {
+		main :is(p, li) a:hover { text-decoration-color: currentColor; }
+	}
+
+	body > header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-1); padding-block: var(--space-00); font-size: var(--step-0); }
+	.brand { display: flex; align-items: center; gap: var(--space-00); }
+	.wordmark img { display: block; }
+	.section { color: var(--ink); font-weight: bold; text-decoration: none; }
+	.menu { display: none; }
+	@media (width < 36rem) {
+		.menu { display: block; margin: -4.5px -10px; padding: 10px; border: 0; background: none; color: inherit; }
+		.menu::before { content: ""; display: block; width: 24px; height: 24px; background: currentColor; mask: url("{{.Root}}static/icons/menu.svg") center / contain no-repeat; }
+		body > header:has(#site-nav:popover-open) .menu::before { mask-image: url("{{.Root}}static/icons/close.svg"); }
+		#site-nav { position: absolute; inset: calc(2 * var(--space-00) + 35px) 0 auto; width: auto; margin: 0; padding: var(--space-00) var(--gutter) var(--space-1); border: 0; border-bottom: 1px solid var(--rule); background: var(--paper-2); box-shadow: 0 .75rem 1rem -.5rem rgb(0 0 0 / .15); }
+		#site-nav ul { display: grid; gap: var(--space-00); }
+	}
+	@media (width >= 36rem) {
+		#site-nav { display: block; position: static; width: auto; margin: 0; padding: 0; border: 0; background: none; color: inherit; overflow: visible; }
+	}
+
+	th, td { font-variant-numeric: tabular-nums; }
+	th[scope="row"] { font-weight: normal; }
+
+	body > footer { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-1); padding-block: var(--space-2); font-size: var(--step-0); }
+	.social, body > footer p { justify-self: end; }
+	.partners { align-items: center; gap: var(--space-1); }
+	.partners img { display: block; }
+	@media (width < 36rem) {
+		body > footer { grid-template-columns: 1fr; }
+		.social, body > footer p { justify-self: start; }
+	}
+</style>
+{{end}}

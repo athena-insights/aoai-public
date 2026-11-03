@@ -1,0 +1,64 @@
+measure	item	rollup	key
+top-jobs	q_priorities:jobs	stats	Top priority
+top-inflation	q_priorities:inflation	stats	Top priority
+top-ai-harms	q_priorities:ai_harms	stats	Top priority
+top-immigration	q_priorities:immigration	stats	Top priority
+top-healthcare	q_priorities:healthcare	stats	Top priority
+top-crime	q_priorities:crime	stats	Top priority
+top-climate	q_priorities:climate	stats	Top priority
+any-ai-harms	q_priorities:ai_harms	nets	high_priority
+any-inflation	q_priorities:inflation	nets	high_priority
+any-healthcare	q_priorities:healthcare	nets	high_priority
+any-immigration	q_priorities:immigration	nets	high_priority
+any-climate	q_priorities:climate	nets	high_priority
+important-ai-harms	q_priorities:ai_harms	stats	Important but lower priority
+concerned	q_affect:response	nets	concerned
+excited	q_affect:response	nets	excited
+very-concerned	q_affect:response	stats	Very concerned
+somewhat-concerned	q_affect:response	stats	Somewhat concerned
+very-excited	q_affect:response	stats	Very excited
+somewhat-excited	q_affect:response	stats	Somewhat excited
+affect-none	q_affect:response	stats	None of these are close to how I feel
+inevitable	q_agency:response	stats	AI is coming into our lives whether we want it or not
+can-shape	q_agency:response	stats	People like me can shape how much AI is part of our lives
+agency-neither	q_agency:response	stats	Neither of these are close to how I feel
+little-children	q_government:children	nets	too_little
+much-children	q_government:children	nets	too_much
+little-environment	q_government:environment	nets	too_little
+much-environment	q_government:environment	nets	too_much
+little-workers	q_government:workers	nets	too_little
+much-workers	q_government:workers	nets	too_much
+little-competitiveness	q_government:competitiveness	nets	too_little
+much-competitiveness	q_government:competitiveness	nets	too_much
+unsure-competitiveness	q_government:competitiveness	stats	Not sure
+likely-smarter	q_futures:smarter	nets	likely
+already-smarter	q_futures:smarter	stats	Already happening
+likely-unintended	q_futures:unintended	nets	likely
+already-unintended	q_futures:unintended	stats	Already happening
+likely-to-happen-unintended	q_futures:unintended	stats	Likely to happen
+likely-breakthroughs	q_futures:breakthroughs	nets	likely
+already-breakthroughs	q_futures:breakthroughs	stats	Already happening
+likely-wmd	q_futures:wmd	nets	likely
+already-wmd	q_futures:wmd	stats	Already happening
+seeing-time	q_community:saving_time	nets	realized
+seeing-pressure	q_community:pressured	nets	realized
+seeing-connections	q_community:losing_connections	nets	realized
+seeing-fake	q_community:real_vs_fake	nets	realized
+seeing-healthcare	q_community:better_healthcare	nets	realized
+seen-time	q_community:saving_time	stats	Have seen
+seen-pressure	q_community:pressured	stats	Have seen
+seen-connections	q_community:losing_connections	stats	Have seen
+seen-fake	q_community:real_vs_fake	stats	Have seen
+seen-healthcare	q_community:better_healthcare	stats	Have seen
+unsure-time	q_community:saving_time	stats	Not sure
+unsure-pressure	q_community:pressured	stats	Not sure
+unsure-healthcare	q_community:better_healthcare	stats	Not sure
+worse-jobs	q_families:job_security	nets	worse
+better-jobs	q_families:job_security	nets	better
+worse-outlook	q_families:outlook	nets	worse
+better-outlook	q_families:outlook	nets	better
+worse-children	q_families:children	nets	worse
+better-children	q_families:children	nets	better
+worse-finances	q_families:finances	nets	worse
+better-finances	q_families:finances	nets	better
+no-effect-finances	q_families:finances	stats	Having no effect

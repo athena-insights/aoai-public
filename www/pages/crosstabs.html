@@ -1,0 +1,46 @@
+{{define "content"}}
+{{- with .Crosstab}}
+<header>
+	<h1>{{longDates .Wave}}</h1>
+	<p>
+		Results of an Americans on AI survey of {{count .Wave.Respondents}} adults, fielded {{template "span" (longSpan .Wave)}}, by NORC at the University of Chicago on the AmeriSpeak probability-based panel: {{share .Wave.Online .Wave.Respondents}} online and {{share .Wave.Phone .Wave.Respondents}} by phone.
+	</p>
+	<p class="notes">
+		All figures are weighted to Census benchmarks and the 2024 presidential vote.
+		The margin of error is {{surveyMOE .Wave.MOE}} points for all adults and wider for groups.
+		Groups of fewer than {{count .MinBase}} respondents are excluded, except those marked †.
+		The same results are in <a href="{{$.Root}}static/pdfs/americans-on-ai-report-{{.Wave.ID}}.pdf">the survey's report</a> (PDF).
+	</p>
+</header>
+<div class="sheet" role="region" aria-label="The tables" tabindex="0">
+{{- range .Questions}}
+	<table class="crosstab" id="{{.ID}}">
+		<caption><span>{{.Stem}}</span></caption>
+		{{- /* A column group per dimension, so that a cell's headers include its dimension's: the dims row's headings have colgroup scope, which reaches a cell only through a column group. */}}
+		{{- range $.Crosstab.Dims}}
+		<colgroup span="{{.Span}}"></colgroup>
+		{{- end}}
+		{{- range .Items}}
+		<tbody class="item">
+			<tr class="dims">
+				{{- /* The corner: the item's wording, as the row group's header; a one-item question's item has none, and the corner is an empty cell. */}}
+				{{if .Label}}<th scope="rowgroup" rowspan="2" class="corner">{{.Label}}</th>{{else}}<td rowspan="2" class="corner"></td>{{end}}
+				{{- range $i, $d := $.Crosstab.Dims}}
+				<th scope="colgroup" colspan="{{.Span}}"{{if $i}} class="starts"{{end}}>{{.Label}}</th>
+				{{- end}}
+			</tr>
+			<tr class="heads">{{range $.Crosstab.Columns}}<th scope="col"{{if .Starts}} class="starts"{{end}}><span>{{.Label}}{{if .Small}}†{{end}}</span></th>{{end}}</tr>
+		{{- range .Responses}}
+			<tr class="response"><th scope="row">{{.Label}}</th>{{range $i, $c := .Cells}}<td{{if (index $.Crosstab.Columns $i).Starts}} class="starts"{{end}}>{{percent .Estimate false}}</td>{{end}}</tr>
+		{{- end}}
+		{{- range .Totals}}{{$net := .Net}}
+			<tr class="total"><th scope="row">{{.Label}}</th>{{range $i, $c := .Cells}}<td{{if (index $.Crosstab.Columns $i).Starts}} class="starts"{{end}}>{{percent .Estimate $net}}</td>{{end}}</tr>
+		{{- end}}
+			<tr class="base"><th scope="row">Respondents</th>{{range $.Crosstab.Columns}}<td{{if .Starts}} class="starts"{{end}}>{{count .Base}}</td>{{end}}</tr>
+		</tbody>
+		{{- end}}
+	</table>
+{{- end}}
+</div>
+{{- end}}
+{{- end}}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- /* The browser's title: the page's own, on the crosstabs with the wave's dates, then the site's name, on every page. */}}
+{{- define "title"}}{{.Title}}{{with .Crosstab}}: {{longDates .Wave}}{{end}} – Americans on AI{{end}}
+<title>{{template "title" .}}</title>
+{{- /* The link preview: the title again, a description, one line for the site, and the page and the card at the site's origin. */}}
+{{- $description := "Americans on AI is a project to understand Americans' evolving views on artificial intelligence."}}
+<meta name="description" content="{{$description}}">
+<meta property="og:site_name" content="Americans on AI">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{template "title" .}}">
+<meta property="og:url" content="{{.Origin}}{{.Path}}">
+<meta property="og:description" content="{{$description}}">
+<meta property="og:image" content="{{.Origin}}/static/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Americans on Artificial Intelligence">
+<meta name="twitter:card" content="summary_large_image">
+{{- /* The site's icon, the current site's set: the purple flag on white. */}}
+<link rel="icon" href="{{.Root}}static/icons/favicon.ico" sizes="32x32">
+<link rel="icon" href="{{.Root}}static/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{.Root}}static/icons/apple-touch-icon.png">
+{{- /* The fonts, preloaded so that their fetch starts with the HTML, not at layout. A font is fetched in CORS mode, so each needs crossorigin, or the browser fetches it twice. */}}
+<link rel="preload" href="{{.Root}}static/fonts/american-grotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{.Root}}static/fonts/american-grotesk-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{.Root}}static/fonts/american-grotesk-condensed-bold.woff2" as="font" type="font/woff2" crossorigin>
+{{- /* The styles: what every page shares, then the frame's own, the site's pages' or the crosstabs'. */}}
+{{template "styles-base" .}}
+{{- if .Crosstab}}
+{{template "styles-crosstabs" .}}
+{{- else}}
+{{template "styles-site" .}}
+{{- /* Deferred scripts run in order once the page is read: highlights.js first, so that it doesn't wait on the chart library. The crosstabs have no charts, highlights or contents strip, so they load none of them. */}}
+<script src="{{.Root}}static/highlights.js" defer></script>
+<script src="{{.Root}}static/echarts.min.js" defer></script>
+<script src="{{.Root}}static/charts.js" defer></script>
+<script src="{{.Root}}static/contents.js" defer></script>
+{{- end}}
+{{- /* Analytics: GoatCounter counts the page view, with no cookies and nothing stored in the browser (the Privacy Notice says what it keeps). Its script doesn't count localhost, so `mk serve` is unseen. */}}
+<script data-goatcounter="https://americansonai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header>
+	<div class="brand">
+		<a class="wordmark" href="{{.Root}}"><img src="{{.Root}}static/logos/americans-on-ai.svg" alt="Americans on AI" width="65" height="35"></a>
+		{{- with .Section}}
+		<a class="section" href="{{.Href}}">{{.Title}}</a>
+		{{- end}}
+	</div>
+	<button class="menu" popovertarget="site-nav" aria-label="Menu"></button>
+	{{- /* The navigation: the site's pages, or on the crosstabs the waves, each named by its dates. */}}
+	<nav id="site-nav"{{if .Section}} class="waves"{{end}} aria-label="{{if .Section}}{{.Section.Title}}{{else}}Site{{end}}" popover>
+		<ul>
+		{{- range .Nav}}
+			<li><a href="{{.Href}}"{{if .Current}} aria-current="page"{{end}}>{{with .Sample}}{{template "span" (shortSpan .)}}{{else}}{{.Title}}{{end}}</a></li>
+		{{- end}}
+		</ul>
+	</nav>
+</header>
+<main>
+{{- template "content" .}}
+</main>
+<footer>
+	<ul class="partners">
+		<li><a href="https://www.athenainsights.org/" target="_blank" rel="noopener"><img src="{{.Root}}static/logos/athena-insights.svg" alt="Athena Insights" width="96" height="48"></a></li>
+		<li><a href="https://www.earlystudies.com/" target="_blank" rel="noopener"><img src="{{.Root}}static/logos/early-studies.svg" alt="Early Studies" width="129" height="36"></a></li>
+	</ul>
+	{{- /* A link that leaves the site and stands apart from a sentence opens in a new tab and carries the north-east arrow, as the overview's Subscribe button does, hidden from screen readers. The partners' logos open in a new tab too, with no arrow. */}}
+	<ul class="social">
+		<li><a href="https://news.americanson.ai/" target="_blank" rel="noopener">Substack <span aria-hidden="true">↗</span></a></li>
+		<li><a href="https://www.linkedin.com/company/americans-on-ai/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+		<li><a href="https://x.com/AmericansOnAI" target="_blank" rel="noopener">X (Twitter) <span aria-hidden="true">↗</span></a></li>
+	</ul>
+	<nav aria-label="Footer">
+		<ul>
+			<li><a href="{{.Root}}about/#contact">Contact</a></li>
+			<li><a href="{{.Root}}privacy-policy/">Privacy Notice</a></li>
+		</ul>
+	</nav>
+	<p><small>© 2026 Athena Insights Inc.</small></p>
+</footer>
+</body>
+</html>

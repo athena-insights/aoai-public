@@ -1,0 +1,19 @@
+{{define "content"}}
+{{- /* The page opens as Methodology, Data and About do, flush left: its title, a question written here (the browser's title is site.go's), then what the page does and how it chooses, and the dateline. */}}
+<header>
+	<h1>What do different groups of Americans think about AI?</h1>
+	<p>Here we break down the findings by age, sex, race and ethnicity, education and income, and party.</p>
+	<p>We highlight the differences that show up again and again, and the trends that are changing over time.</p>
+	{{template "dateline" .}}
+</header>
+<nav aria-label="Contents">
+	<ol>
+		<li><a href="#age">Age</a></li>
+		<li><a href="#sex">Sex</a></li>
+		<li><a href="#race">Race &amp; Ethnicity</a></li>
+		<li><a href="#education">Education &amp; Income</a></li>
+		<li><a href="#party">Party</a></li>
+	</ol>
+</nav>
+{{body}}
+{{- end}}

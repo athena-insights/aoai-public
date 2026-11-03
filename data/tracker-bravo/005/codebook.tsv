@@ -1,0 +1,365 @@
+variable	variable_label	value	value_label
+CANDI24_IMPUTED_VC	Did you vote in the 2024 presidential election for [Kamala Harris, Donald Trump/Donald Trump, Kamala Harris], or someone else?	1	Kamala Harris
+CANDI24_IMPUTED_VC	Did you vote in the 2024 presidential election for [Kamala Harris, Donald Trump/Donald Trump, Kamala Harris], or someone else?	2	Donald Trump
+CANDI24_IMPUTED_VC	Did you vote in the 2024 presidential election for [Kamala Harris, Donald Trump/Donald Trump, Kamala Harris], or someone else?	3	Someone else
+CANDI24_IMPUTED_VC	Did you vote in the 2024 presidential election for [Kamala Harris, Donald Trump/Donald Trump, Kamala Harris], or someone else?	4	Did not vote in this race
+RND_02	DATA-ONLY VARIABLE: Controls randomization at ATHENA1, ATHENA2A, ATHENA3, ATHENA4, ATHENA5, ATHENA6	0	0
+RND_02	DATA-ONLY VARIABLE: Controls randomization at ATHENA1, ATHENA2A, ATHENA3, ATHENA4, ATHENA5, ATHENA6	1	1
+ATHENA1A	[Improving the job situation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	1	Top priority
+ATHENA1A	[Improving the job situation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	2	Important but lower priority
+ATHENA1A	[Improving the job situation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	3	Not too important
+ATHENA1A	[Improving the job situation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	4	Not a priority at all
+ATHENA1A	[Improving the job situation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	77	Not sure
+ATHENA1A	[Improving the job situation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	98	SKIPPED ON WEB
+ATHENA1A	[Improving the job situation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	99	REFUSED
+ATHENA1B	[Reducing inflation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	1	Top priority
+ATHENA1B	[Reducing inflation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	2	Important but lower priority
+ATHENA1B	[Reducing inflation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	3	Not too important
+ATHENA1B	[Reducing inflation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	4	Not a priority at all
+ATHENA1B	[Reducing inflation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	77	Not sure
+ATHENA1B	[Reducing inflation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	98	SKIPPED ON WEB
+ATHENA1B	[Reducing inflation] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	99	REFUSED
+ATHENA1C	[Dealing with harms from artificial intelligence (AI)] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	1	Top priority
+ATHENA1C	[Dealing with harms from artificial intelligence (AI)] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	2	Important but lower priority
+ATHENA1C	[Dealing with harms from artificial intelligence (AI)] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	3	Not too important
+ATHENA1C	[Dealing with harms from artificial intelligence (AI)] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	4	Not a priority at all
+ATHENA1C	[Dealing with harms from artificial intelligence (AI)] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	77	Not sure
+ATHENA1C	[Dealing with harms from artificial intelligence (AI)] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	98	SKIPPED ON WEB
+ATHENA1C	[Dealing with harms from artificial intelligence (AI)] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	99	REFUSED
+ATHENA1D	[Dealing with immigration] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	1	Top priority
+ATHENA1D	[Dealing with immigration] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	2	Important but lower priority
+ATHENA1D	[Dealing with immigration] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	3	Not too important
+ATHENA1D	[Dealing with immigration] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	4	Not a priority at all
+ATHENA1D	[Dealing with immigration] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	77	Not sure
+ATHENA1D	[Dealing with immigration] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	98	SKIPPED ON WEB
+ATHENA1D	[Dealing with immigration] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	99	REFUSED
+ATHENA1E	[Improving health care] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	1	Top priority
+ATHENA1E	[Improving health care] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	2	Important but lower priority
+ATHENA1E	[Improving health care] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	3	Not too important
+ATHENA1E	[Improving health care] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	4	Not a priority at all
+ATHENA1E	[Improving health care] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	77	Not sure
+ATHENA1E	[Improving health care] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	98	SKIPPED ON WEB
+ATHENA1E	[Improving health care] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	99	REFUSED
+ATHENA1F	[Reducing crime] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	1	Top priority
+ATHENA1F	[Reducing crime] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	2	Important but lower priority
+ATHENA1F	[Reducing crime] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	3	Not too important
+ATHENA1F	[Reducing crime] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	4	Not a priority at all
+ATHENA1F	[Reducing crime] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	77	Not sure
+ATHENA1F	[Reducing crime] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	98	SKIPPED ON WEB
+ATHENA1F	[Reducing crime] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	99	REFUSED
+ATHENA1G	[Dealing with climate change] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	1	Top priority
+ATHENA1G	[Dealing with climate change] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	2	Important but lower priority
+ATHENA1G	[Dealing with climate change] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	3	Not too important
+ATHENA1G	[Dealing with climate change] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	4	Not a priority at all
+ATHENA1G	[Dealing with climate change] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	77	Not sure
+ATHENA1G	[Dealing with climate change] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	98	SKIPPED ON WEB
+ATHENA1G	[Dealing with climate change] We are faced with many problems in this country, and resources are often limited. Given these constraints, how much of a priority should the government place on each of the following?	99	REFUSED
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	1	Very excited
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	2	Somewhat excited
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	3	Somewhat concerned
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	4	Very concerned
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	5	None of these are close to how I feel
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	77	DON'T KNOW
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	98	SKIPPED ON WEB
+ATHENA2A	Thinking about AI's growing role in society, which of these options comes closest to how you feel, even if none are exactly right?	99	REFUSED
+ATHENA2B	Again, thinking about AI, which statement comes closer to your view, even if neither is exactly right?	1	People like me can shape how much AI is part of our lives
+ATHENA2B	Again, thinking about AI, which statement comes closer to your view, even if neither is exactly right?	2	AI is coming into our lives whether we want it or not
+ATHENA2B	Again, thinking about AI, which statement comes closer to your view, even if neither is exactly right?	3	Neither of these are close to how I feel
+ATHENA2B	Again, thinking about AI, which statement comes closer to your view, even if neither is exactly right?	77	DON'T KNOW
+ATHENA2B	Again, thinking about AI, which statement comes closer to your view, even if neither is exactly right?	98	SKIPPED ON WEB
+ATHENA2B	Again, thinking about AI, which statement comes closer to your view, even if neither is exactly right?	99	REFUSED
+ATHENA3A	[People are saving time on everyday tasks] Thinking about your local community, how much are you seeing each of the following changes because of AI?	1	Have seen
+ATHENA3A	[People are saving time on everyday tasks] Thinking about your local community, how much are you seeing each of the following changes because of AI?	2	Starting to see
+ATHENA3A	[People are saving time on everyday tasks] Thinking about your local community, how much are you seeing each of the following changes because of AI?	3	Expect to see soon
+ATHENA3A	[People are saving time on everyday tasks] Thinking about your local community, how much are you seeing each of the following changes because of AI?	4	Don't expect to see
+ATHENA3A	[People are saving time on everyday tasks] Thinking about your local community, how much are you seeing each of the following changes because of AI?	77	Not sure
+ATHENA3A	[People are saving time on everyday tasks] Thinking about your local community, how much are you seeing each of the following changes because of AI?	98	SKIPPED ON WEB
+ATHENA3A	[People are saving time on everyday tasks] Thinking about your local community, how much are you seeing each of the following changes because of AI?	99	REFUSED
+ATHENA3B	[People are pressured to do more, faster] Thinking about your local community, how much are you seeing each of the following changes because of AI?	1	Have seen
+ATHENA3B	[People are pressured to do more, faster] Thinking about your local community, how much are you seeing each of the following changes because of AI?	2	Starting to see
+ATHENA3B	[People are pressured to do more, faster] Thinking about your local community, how much are you seeing each of the following changes because of AI?	3	Expect to see soon
+ATHENA3B	[People are pressured to do more, faster] Thinking about your local community, how much are you seeing each of the following changes because of AI?	4	Don't expect to see
+ATHENA3B	[People are pressured to do more, faster] Thinking about your local community, how much are you seeing each of the following changes because of AI?	77	Not sure
+ATHENA3B	[People are pressured to do more, faster] Thinking about your local community, how much are you seeing each of the following changes because of AI?	98	SKIPPED ON WEB
+ATHENA3B	[People are pressured to do more, faster] Thinking about your local community, how much are you seeing each of the following changes because of AI?	99	REFUSED
+ATHENA3C	[People are losing connections to others] Thinking about your local community, how much are you seeing each of the following changes because of AI?	1	Have seen
+ATHENA3C	[People are losing connections to others] Thinking about your local community, how much are you seeing each of the following changes because of AI?	2	Starting to see
+ATHENA3C	[People are losing connections to others] Thinking about your local community, how much are you seeing each of the following changes because of AI?	3	Expect to see soon
+ATHENA3C	[People are losing connections to others] Thinking about your local community, how much are you seeing each of the following changes because of AI?	4	Don't expect to see
+ATHENA3C	[People are losing connections to others] Thinking about your local community, how much are you seeing each of the following changes because of AI?	77	Not sure
+ATHENA3C	[People are losing connections to others] Thinking about your local community, how much are you seeing each of the following changes because of AI?	98	SKIPPED ON WEB
+ATHENA3C	[People are losing connections to others] Thinking about your local community, how much are you seeing each of the following changes because of AI?	99	REFUSED
+ATHENA3D	[People are struggling to tell what's real from what's fake] Thinking about your local community, how much are you seeing each of the following changes because of AI?	1	Have seen
+ATHENA3D	[People are struggling to tell what's real from what's fake] Thinking about your local community, how much are you seeing each of the following changes because of AI?	2	Starting to see
+ATHENA3D	[People are struggling to tell what's real from what's fake] Thinking about your local community, how much are you seeing each of the following changes because of AI?	3	Expect to see soon
+ATHENA3D	[People are struggling to tell what's real from what's fake] Thinking about your local community, how much are you seeing each of the following changes because of AI?	4	Don't expect to see
+ATHENA3D	[People are struggling to tell what's real from what's fake] Thinking about your local community, how much are you seeing each of the following changes because of AI?	77	Not sure
+ATHENA3D	[People are struggling to tell what's real from what's fake] Thinking about your local community, how much are you seeing each of the following changes because of AI?	98	SKIPPED ON WEB
+ATHENA3D	[People are struggling to tell what's real from what's fake] Thinking about your local community, how much are you seeing each of the following changes because of AI?	99	REFUSED
+ATHENA3E	[People are getting better health care] Thinking about your local community, how much are you seeing each of the following changes because of AI?	1	Have seen
+ATHENA3E	[People are getting better health care] Thinking about your local community, how much are you seeing each of the following changes because of AI?	2	Starting to see
+ATHENA3E	[People are getting better health care] Thinking about your local community, how much are you seeing each of the following changes because of AI?	3	Expect to see soon
+ATHENA3E	[People are getting better health care] Thinking about your local community, how much are you seeing each of the following changes because of AI?	4	Don't expect to see
+ATHENA3E	[People are getting better health care] Thinking about your local community, how much are you seeing each of the following changes because of AI?	77	Not sure
+ATHENA3E	[People are getting better health care] Thinking about your local community, how much are you seeing each of the following changes because of AI?	98	SKIPPED ON WEB
+ATHENA3E	[People are getting better health care] Thinking about your local community, how much are you seeing each of the following changes because of AI?	99	REFUSED
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	1	Making it much better
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	2	Making it somewhat better
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	3	Making it somewhat worse
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	4	Making it much worse
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	5	Having no effect
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	77	DON'T KNOW
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	98	SKIPPED ON WEB
+ATHENA4A	[Job security] Thinking about families in America today, how is AI affecting each of the following?	99	REFUSED
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	1	Making it much better
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	2	Making it somewhat better
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	3	Making it somewhat worse
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	4	Making it much worse
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	5	Having no effect
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	77	DON'T KNOW
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	98	SKIPPED ON WEB
+ATHENA4B	[Outlook on the future] Thinking about families in America today, how is AI affecting each of the following?	99	REFUSED
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	1	Making it much better
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	2	Making it somewhat better
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	3	Making it somewhat worse
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	4	Making it much worse
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	5	Having no effect
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	77	DON'T KNOW
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	98	SKIPPED ON WEB
+ATHENA4C	[Children's well-being] Thinking about families in America today, how is AI affecting each of the following?	99	REFUSED
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	1	Making it much better
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	2	Making it somewhat better
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	3	Making it somewhat worse
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	4	Making it much worse
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	5	Having no effect
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	77	DON'T KNOW
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	98	SKIPPED ON WEB
+ATHENA4D	[Household finances] Thinking about families in America today, how is AI affecting each of the following?	99	REFUSED
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	1	Way too much
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	2	Somewhat too much
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	3	About the right amount
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	4	Somewhat too little
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	5	Way too little
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	77	Not sure
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	98	SKIPPED ON WEB
+ATHENA5A	[AI's effects on children and young people] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	99	REFUSED
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	1	Way too much
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	2	Somewhat too much
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	3	About the right amount
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	4	Somewhat too little
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	5	Way too little
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	77	Not sure
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	98	SKIPPED ON WEB
+ATHENA5B	[AI's environmental footprint, including from data centers] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	99	REFUSED
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	1	Way too much
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	2	Somewhat too much
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	3	About the right amount
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	4	Somewhat too little
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	5	Way too little
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	77	Not sure
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	98	SKIPPED ON WEB
+ATHENA5C	[AI's effects on workers and jobs] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	99	REFUSED
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	1	Way too much
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	2	Somewhat too much
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	3	About the right amount
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	4	Somewhat too little
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	5	Way too little
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	77	Not sure
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	98	SKIPPED ON WEB
+ATHENA5D	[AI's effect on American competitiveness] When it comes to each of the following issues, is the government doing too much, too little, or about the right amount in response?	99	REFUSED
+ATHENA6A	[AI becoming smarter than humans at most tasks] Thinking about the next 20 years, how likely is each of the following to happen?	1	Already happening
+ATHENA6A	[AI becoming smarter than humans at most tasks] Thinking about the next 20 years, how likely is each of the following to happen?	2	Likely to happen
+ATHENA6A	[AI becoming smarter than humans at most tasks] Thinking about the next 20 years, how likely is each of the following to happen?	3	Unlikely to happen
+ATHENA6A	[AI becoming smarter than humans at most tasks] Thinking about the next 20 years, how likely is each of the following to happen?	4	Not at all likely to happen
+ATHENA6A	[AI becoming smarter than humans at most tasks] Thinking about the next 20 years, how likely is each of the following to happen?	77	Not sure
+ATHENA6A	[AI becoming smarter than humans at most tasks] Thinking about the next 20 years, how likely is each of the following to happen?	98	SKIPPED ON WEB
+ATHENA6A	[AI becoming smarter than humans at most tasks] Thinking about the next 20 years, how likely is each of the following to happen?	99	REFUSED
+ATHENA6B	[AI systems behaving in ways their developers did not intend] Thinking about the next 20 years, how likely is each of the following to happen?	1	Already happening
+ATHENA6B	[AI systems behaving in ways their developers did not intend] Thinking about the next 20 years, how likely is each of the following to happen?	2	Likely to happen
+ATHENA6B	[AI systems behaving in ways their developers did not intend] Thinking about the next 20 years, how likely is each of the following to happen?	3	Unlikely to happen
+ATHENA6B	[AI systems behaving in ways their developers did not intend] Thinking about the next 20 years, how likely is each of the following to happen?	4	Not at all likely to happen
+ATHENA6B	[AI systems behaving in ways their developers did not intend] Thinking about the next 20 years, how likely is each of the following to happen?	77	Not sure
+ATHENA6B	[AI systems behaving in ways their developers did not intend] Thinking about the next 20 years, how likely is each of the following to happen?	98	SKIPPED ON WEB
+ATHENA6B	[AI systems behaving in ways their developers did not intend] Thinking about the next 20 years, how likely is each of the following to happen?	99	REFUSED
+ATHENA6C	[AI making major scientific and medical breakthroughs] Thinking about the next 20 years, how likely is each of the following to happen?	1	Already happening
+ATHENA6C	[AI making major scientific and medical breakthroughs] Thinking about the next 20 years, how likely is each of the following to happen?	2	Likely to happen
+ATHENA6C	[AI making major scientific and medical breakthroughs] Thinking about the next 20 years, how likely is each of the following to happen?	3	Unlikely to happen
+ATHENA6C	[AI making major scientific and medical breakthroughs] Thinking about the next 20 years, how likely is each of the following to happen?	4	Not at all likely to happen
+ATHENA6C	[AI making major scientific and medical breakthroughs] Thinking about the next 20 years, how likely is each of the following to happen?	77	Not sure
+ATHENA6C	[AI making major scientific and medical breakthroughs] Thinking about the next 20 years, how likely is each of the following to happen?	98	SKIPPED ON WEB
+ATHENA6C	[AI making major scientific and medical breakthroughs] Thinking about the next 20 years, how likely is each of the following to happen?	99	REFUSED
+ATHENA6D	[AI being used to create weapons of mass destruction] Thinking about the next 20 years, how likely is each of the following to happen?	1	Already happening
+ATHENA6D	[AI being used to create weapons of mass destruction] Thinking about the next 20 years, how likely is each of the following to happen?	2	Likely to happen
+ATHENA6D	[AI being used to create weapons of mass destruction] Thinking about the next 20 years, how likely is each of the following to happen?	3	Unlikely to happen
+ATHENA6D	[AI being used to create weapons of mass destruction] Thinking about the next 20 years, how likely is each of the following to happen?	4	Not at all likely to happen
+ATHENA6D	[AI being used to create weapons of mass destruction] Thinking about the next 20 years, how likely is each of the following to happen?	77	Not sure
+ATHENA6D	[AI being used to create weapons of mass destruction] Thinking about the next 20 years, how likely is each of the following to happen?	98	SKIPPED ON WEB
+ATHENA6D	[AI being used to create weapons of mass destruction] Thinking about the next 20 years, how likely is each of the following to happen?	99	REFUSED
+PartyID3	DATA-ONLY: Computed 3-level Party ID	-1	Unknown
+PartyID3	DATA-ONLY: Computed 3-level Party ID	1	Democrat (including leaners)
+PartyID3	DATA-ONLY: Computed 3-level Party ID	2	Don't Lean/Independent/None
+PartyID3	DATA-ONLY: Computed 3-level Party ID	3	Republican (including leaners)
+duration_ATH	ATH - August W2 2026 Omnibus Section duration	0	Under 1 minute
+SURV_MODE	Survey interview mode (online or phone)	1	Phone interview
+SURV_MODE	Survey interview mode (online or phone)	2	Web Interview
+SURV_LANG	Survey Interview Language	1	English
+SURV_LANG	Survey Interview Language	2	Spanish
+SEX	Respondent sex	1	Male
+SEX	Respondent sex	2	Female
+AGE4C	Age - 4 Categories	1	18-34
+AGE4C	Age - 4 Categories	2	35-49
+AGE4C	Age - 4 Categories	3	50-64
+AGE4C	Age - 4 Categories	4	65+
+AGE7	Age - 7 Categories	1	18-24
+AGE7	Age - 7 Categories	2	25-34
+AGE7	Age - 7 Categories	3	35-44
+AGE7	Age - 7 Categories	4	45-54
+AGE7	Age - 7 Categories	5	55-64
+AGE7	Age - 7 Categories	6	65-74
+AGE7	Age - 7 Categories	7	75+
+AGE7	Age - 7 Categories	99	Under 18
+RACETHNICITY	Combined Race/Ethnicity	1	White, non-Hispanic
+RACETHNICITY	Combined Race/Ethnicity	2	Black, non-Hispanic
+RACETHNICITY	Combined Race/Ethnicity	3	Other, non-Hispanic
+RACETHNICITY	Combined Race/Ethnicity	4	Hispanic
+RACETHNICITY	Combined Race/Ethnicity	5	2+, non-Hispanic
+RACETHNICITY	Combined Race/Ethnicity	6	Asian-Pacific Islander, non-Hispanic
+EDUC5	5-level education	1	Less than HS
+EDUC5	5-level education	2	HS graduate or equivalent
+EDUC5	5-level education	3	Some college/ associates degree
+EDUC5	5-level education	4	Bachelor's degree
+EDUC5	5-level education	5	Post grad study/professional degree
+MARITAL	Marital Status	1	Married
+MARITAL	Marital Status	2	Widowed
+MARITAL	Marital Status	3	Divorced
+MARITAL	Marital Status	4	Separated
+MARITAL	Marital Status	5	Never married
+MARITAL	Marital Status	6	Living with partner
+EMPLOY	Current Employment Status	1	Working - as a paid employee
+EMPLOY	Current Employment Status	2	Working - self-employed
+EMPLOY	Current Employment Status	3	Not working - on temporary layoff from a job
+EMPLOY	Current Employment Status	4	Not working - looking for work
+EMPLOY	Current Employment Status	5	Not working - retired
+EMPLOY	Current Employment Status	6	Not working - disabled
+EMPLOY	Current Employment Status	7	Not working - other
+INCOME	Household Income	1	Less than $5,000
+INCOME	Household Income	2	$5,000 to $9,999
+INCOME	Household Income	3	$10,000 to $14,999
+INCOME	Household Income	4	$15,000 to $19,999
+INCOME	Household Income	5	$20,000 to $24,999
+INCOME	Household Income	6	$25,000 to $29,999
+INCOME	Household Income	7	$30,000 to $34,999
+INCOME	Household Income	8	$35,000 to $39,999
+INCOME	Household Income	9	$40,000 to $49,999
+INCOME	Household Income	10	$50,000 to $59,999
+INCOME	Household Income	11	$60,000 to $74,999
+INCOME	Household Income	12	$75,000 to $84,999
+INCOME	Household Income	13	$85,000 to $99,999
+INCOME	Household Income	14	$100,000 to $124,999
+INCOME	Household Income	15	$125,000 to $149,999
+INCOME	Household Income	16	$150,000 to $174,999
+INCOME	Household Income	17	$175,000 to $199,999
+INCOME	Household Income	18	$200,000 or more
+INCOME4	4-level household income	1	Less than $30,000
+INCOME4	4-level household income	2	$30,000 to under $60,000
+INCOME4	4-level household income	3	$60,000 to under $100,000
+INCOME4	4-level household income	4	$100,000 or more
+INCOME9	9-level household income	1	Under $10,000
+INCOME9	9-level household income	2	$10,000 to under $20,000
+INCOME9	9-level household income	3	$20,000 to under $30,000
+INCOME9	9-level household income	4	$30,000 to under $40,000
+INCOME9	9-level household income	5	$40,000 to under $50,000
+INCOME9	9-level household income	6	$50,000 to under $75,000
+INCOME9	9-level household income	7	$75,000 to under $100,000
+INCOME9	9-level household income	8	$100,000 to under $150,000
+INCOME9	9-level household income	9	$150,000 or more
+STATE	State	77	DON'T KNOW
+STATE	State	99	REFUSED
+STATE	State	AK	Alaska
+STATE	State	AL	Alabama
+STATE	State	AR	Arkansas
+STATE	State	AZ	Arizona
+STATE	State	CA	California
+STATE	State	CO	Colorado
+STATE	State	CT	Connecticut
+STATE	State	DC	District of Columbia
+STATE	State	DE	Delaware
+STATE	State	FL	Florida
+STATE	State	GA	Georgia
+STATE	State	HI	Hawaii
+STATE	State	IA	Iowa
+STATE	State	ID	Idaho
+STATE	State	IL	Illinois
+STATE	State	IN	Indiana
+STATE	State	KS	Kansas
+STATE	State	KY	Kentucky
+STATE	State	LA	Louisiana
+STATE	State	MA	Massachusetts
+STATE	State	MD	Maryland
+STATE	State	ME	Maine
+STATE	State	MI	Michigan
+STATE	State	MN	Minnesota
+STATE	State	MO	Missouri
+STATE	State	MS	Mississippi
+STATE	State	MT	Montana
+STATE	State	NC	North Carolina
+STATE	State	ND	North Dakota
+STATE	State	NE	Nebraska
+STATE	State	NH	New Hampshire
+STATE	State	NJ	New Jersey
+STATE	State	NM	New Mexico
+STATE	State	NV	Nevada
+STATE	State	NY	New York
+STATE	State	OH	Ohio
+STATE	State	OK	Oklahoma
+STATE	State	OR	Oregon
+STATE	State	PA	Pennsylvania
+STATE	State	RI	Rhode Island
+STATE	State	SC	South Carolina
+STATE	State	SD	South Dakota
+STATE	State	TN	Tennessee
+STATE	State	TX	Texas
+STATE	State	UT	Utah
+STATE	State	VA	Virginia
+STATE	State	VI	Virgin Islands
+STATE	State	VT	Vermont
+STATE	State	WA	Washington
+STATE	State	WI	Wisconsin
+STATE	State	WV	West Virginia
+STATE	State	WY	Wyoming
+REGION4	4-level region	1	Northeast
+REGION4	4-level region	2	Midwest
+REGION4	4-level region	3	South
+REGION4	4-level region	4	West
+REGION9	9-level region	1	New England
+REGION9	9-level region	2	Mid-Atlantic
+REGION9	9-level region	3	East North Central
+REGION9	9-level region	4	West North Central
+REGION9	9-level region	5	South Atlantic
+REGION9	9-level region	6	East South Central
+REGION9	9-level region	7	West South Central
+REGION9	9-level region	8	Mountain
+REGION9	9-level region	9	Pacific
+METRO	Metropolitan area flag	0	Non-Metro Area
+METRO	Metropolitan area flag	1	Metro Area
+INTERNET	HH internet access via dial-up, DSL, or cable broadband at home	0	Non-internet household
+INTERNET	HH internet access via dial-up, DSL, or cable broadband at home	1	Internet Household
+HOUSING	Home Ownership	1	Owned or being bought by you or someone in your household
+HOUSING	Home Ownership	2	Rented for cash
+HOUSING	Home Ownership	3	Occupied without payment of cash rent
+HOME_TYPE	Type of building of panelists' residence	1	A one-family house detached from any other house
+HOME_TYPE	Type of building of panelists' residence	2	A one-family house attached to one or more houses
+HOME_TYPE	Type of building of panelists' residence	3	A building with 2 or more apartments
+HOME_TYPE	Type of building of panelists' residence	4	A mobile home or trailer
+HOME_TYPE	Type of building of panelists' residence	5	Boat, RV, van, etc
+PHONESERVICE	Telephone service for the household	1	Landline telephone only
+PHONESERVICE	Telephone service for the household	2	Have a landline, but mostly use cellphone
+PHONESERVICE	Telephone service for the household	3	Have cellphone, but mostly use landline
+PHONESERVICE	Telephone service for the household	4	Cellphone only
+PHONESERVICE	Telephone service for the household	5	No telephone service
+HHSIZE	Household size (including children)	1	One person, I live by myself
+HHSIZE	Household size (including children)	2	Two persons
+HHSIZE	Household size (including children)	3	Three persons
+HHSIZE	Household size (including children)	4	Four persons
+HHSIZE	Household size (including children)	5	Five persons
+HHSIZE	Household size (including children)	6	Six or more persons

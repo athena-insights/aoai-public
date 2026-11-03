@@ -1,0 +1,12 @@
+dim	value	target	count	source	vintage	universe	note
+sex	Female	0.509926	136242963	ACS 1-yr B01001	2024	US adults 18+	
+sex	Male	0.490074	130938715	ACS 1-yr B01001	2024	US adults 18+	
+age	18-34	0.28995	77469364	ACS 1-yr B01001	2024	US adults 18+	
+age	35-49	0.248165	66305086	ACS 1-yr B01001	2024	US adults 18+	
+age	50-64	0.232658	62161945	ACS 1-yr B01001	2024	US adults 18+	
+age	65+	0.229227	61245283	ACS 1-yr B01001	2024	US adults 18+	
+eth	White	0.620731	165848053	ACS 1-yr B01001A	2024	US adults 18+	White alone; Hispanic origin not separated
+eth	Black	0.118069	31545781	ACS 1-yr B01001B	2024	US adults 18+	
+eth	Asian	0.065301	17447278	ACS 1-yr B01001D	2024	US adults 18+	
+eth	Mixed	0.114671	30638049	ACS 1-yr B01001G	2024	US adults 18+	two or more races
+eth	Other	0.081228	21702517	ACS 1-yr B01001C+E+F	2024	US adults 18+	AIAN + NHPI + some-other-race, all alone

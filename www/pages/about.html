@@ -1,0 +1,98 @@
+{{define "content"}}
+<header>
+	<h1>{{.Title}}</h1>
+	<p>
+		Americans on AI is a project to understand Americans' evolving views on artificial intelligence.
+	</p>
+</header>
+<section>
+	<p>
+		The Americans on AI biweekly survey of US adults, launched in July 2026, is fielded by <a href="https://www.norc.org">NORC at the University of Chicago</a>.
+	</p>
+	<p>
+		AI is playing an increasingly large role in American life.
+		One-off surveys, each with their own scope and methods, capture a single moment in time.
+		With the technology, and people's views about it, changing rapidly, our tracking survey sets a high-quality baseline of Americans' attitudes and uncovers changes over time, for all adults and different demographic groups.
+	</p>
+	<p>
+		The survey questionnaire was co-developed by <a href="#athena-insights">Athena Insights</a> and <a href="#early-studies">Early Studies</a>, based on qualitative interviews and more than 20 pilot studies.
+		We continue to evolve the survey instrument and methodology, and welcome <a href="#contact">feedback</a>.
+	</p>
+	<p>
+		We have several other studies underway, which will be published in the future.
+	</p>
+	<p>
+		The team behind Americans on AI is <a href="https://www.athenainsights.org/team.html">Caroline Behringer</a>, president of Athena Insights, and <a href="https://www.athenainsights.org/team.html">Colin Bortner</a>, its head of research.
+	</p>
+	<p>
+		Americans on AI is funded by individual donors who share our interest in giving the public and decision-makers high-quality public opinion data on AI.
+		Our funders have no say in the project's design or implementation.
+	</p>
+</section>
+<section aria-labelledby="athena-insights">
+	<h2 id="athena-insights">Athena Insights</h2>
+	<p>
+		Athena Insights is a US-based 501(c)(3) nonprofit working to democratize access to world-class narrative research.
+		We deploy the same sophisticated market research methods that built global brands and make the insights available for free to those working for a better future.
+	</p>
+	<p>
+		More at <a href="https://www.athenainsights.org" target="_blank" rel="noopener">athenainsights.org <span aria-hidden="true">↗</span></a>.
+	</p>
+</section>
+<section aria-labelledby="early-studies">
+	<h2 id="early-studies">Early Studies</h2>
+	<p>
+		Early Studies is a London-based signals intelligence company dedicated to understanding the complexities of human behavior, attitudes, and societal change.
+		Using advanced research methodologies, they specialize in understanding how beliefs shape reality.
+	</p>
+	<p>
+		More at <a href="https://www.earlystudies.com" target="_blank" rel="noopener">earlystudies.com <span aria-hidden="true">↗</span></a>.
+	</p>
+</section>
+<section aria-labelledby="how-to-cite">
+	<h2 id="how-to-cite">How to cite</h2>
+	<p>
+		An example citation to the latest wave of our biweekly survey:
+	</p>
+	<blockquote>
+		<p>{{with .Latest}}The Americans on AI biweekly survey of {{count .Respondents}} U.S. adults was conducted {{apDates .}} by Athena Insights and fielded by NORC at the University of Chicago. The margin of sampling error for all respondents is plus or minus {{tenth .MOE}} percentage points.{{end}}</p>
+	</blockquote>
+	<p>
+		An example for the whole series:
+	</p>
+	<blockquote>
+		<p>{{with series .Waves}}Americans on AI biweekly surveys have been conducted every two weeks since {{.Since}} by Athena Insights, and fielded by NORC at the University of Chicago, each of between {{count .Fewest}} and {{count .Most}} U.S. adults. The margins of sampling error range from plus or minus {{tenth .Narrowest}} to {{tenth .Widest}} percentage points.{{end}}</p>
+	</blockquote>
+	<p>
+		Finally, an example in BibTeX format:
+	</p>
+	<div class="sheet">
+	<pre>@misc{americansonai-biweekly,
+  author = {{"{{"}}Athena Insights}},
+  title = {Americans on {AI} biweekly survey},
+  year = {2026},
+  url = {https://www.americanson.ai/},
+  note = {A tracking survey of US adults,
+    fielded by NORC at the University of Chicago}
+}</pre>
+	</div>
+	<p>
+		Our <a href="{{$.Root}}data/#repository">Data</a> page includes the terms under which you can reuse our data and code.
+	</p>
+</section>
+<section aria-labelledby="contact">
+	<h2 id="contact">Contact</h2>
+	<p>Press inquiries should be directed to <a href="mailto:caroline@athenainsights.org">caroline@athenainsights.org</a>.</p>
+	<p>For all other questions or feedback, email <a href="mailto:hello@athenainsights.org">hello@athenainsights.org</a>.</p>
+</section>
+{{- /* The credits, a colophon: the work the site is made with and who made it, as a list of the things on the page, photos, text and charts, a run-in name and a sentence each, as Methodology lists the groups. Links in a sentence open in place, as the page's other prose links do. */}}
+<section aria-labelledby="credits">
+	<h2 id="credits">Credits</h2>
+	<p>This site is made with the work of others:</p>
+	<ul>
+		<li><b>Photos</b> are courtesy of <a href="https://unsplash.com/@fujiphilm">@fujiphilm</a> on Unsplash, under the <a href="https://unsplash.com/license">Unsplash License</a>.</li>
+		<li><b>Text</b> is set in <a href="https://klim.co.nz/fonts/american-grotesk/">American Grotesk</a>, licensed from Klim Type Foundry.</li>
+		<li><b>Charts</b> are drawn with <a href="https://echarts.apache.org/">Apache ECharts</a>, and <a href="https://github.com/zumerlab/snapdom">snapDOM</a> makes the downloadable versions.</li>
+	</ul>
+</section>
+{{- end}}

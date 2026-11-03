@@ -1,0 +1,35 @@
+q_id	response	label
+q_priorities	Top priority	Top priority
+q_priorities	Important but lower priority	Important but lower priority
+q_priorities	Not too important	Not too important
+q_priorities	Not a priority at all	Not a priority at all
+q_priorities	Not sure	Not sure
+q_agency	AI is coming into our lives whether we want it or not	Coming whether we want it or not
+q_agency	People like me can shape how much AI is part of our lives	We can shape it
+q_agency	Neither of these are close to how I feel	Neither
+q_affect	Very concerned	Very concerned
+q_affect	Somewhat concerned	Somewhat concerned
+q_affect	Very excited	Very excited
+q_affect	Somewhat excited	Somewhat excited
+q_affect	None of these are close to how I feel	None of these
+q_community	Have seen	Have seen it
+q_community	Starting to see	Starting to see it
+q_community	Expect to see soon	Expect to see it soon
+q_community	Don't expect to see	Don't expect to see it
+q_community	Not sure	Not sure
+q_families	Making it much better	Much better
+q_families	Making it somewhat better	Somewhat better
+q_families	Making it somewhat worse	Somewhat worse
+q_families	Making it much worse	Much worse
+q_families	Having no effect	No effect
+q_government	Way too much	Way too much
+q_government	Somewhat too much	Somewhat too much
+q_government	About the right amount	About right
+q_government	Somewhat too little	Somewhat too little
+q_government	Way too little	Way too little
+q_government	Not sure	Not sure
+q_futures	Already happening	Already happening
+q_futures	Likely to happen	Likely to happen
+q_futures	Unlikely to happen	Unlikely to happen
+q_futures	Not at all likely to happen	Not at all likely
+q_futures	Not sure	Not sure

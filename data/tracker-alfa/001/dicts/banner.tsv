@@ -1,0 +1,16 @@
+dim	dim_ord	dim_label	value	value_ord	label	pinned
+total	0	Total	total	0	Total	true
+sex	1	Sex	Female	1	Female	true
+sex	1	Sex	Male	2	Male	true
+party	2	Party	Democrat	1	Dem	true
+party	2	Party	Republican	2	Rep	true
+party	2	Party	Independent	3	Ind	true
+age	3	Age	18-34	1	18–34	true
+age	3	Age	35-49	2	35–49	true
+age	3	Age	50-64	3	50–64	true
+age	3	Age	65+	4	65+	true
+eth	4	Ethnicity	White	1	White	true
+eth	4	Ethnicity	Black	2	Black	true
+eth	4	Ethnicity	Asian	3	Asian	true
+eth	4	Ethnicity	Mixed	4	Mixed	true
+eth	4	Ethnicity	Other	5	Other	true

@@ -1,0 +1,47 @@
+{{define "content"}}
+{{- /*
+	The page opens as a landing page: a headline and its deck, the latest survey's dateline, the press mentions and the newsletter, then the contents strip.
+	The rest of the introduction follows the strip, a lede first, and closes with the basis, the data the findings draw on.
+	The headline's last word is highlighted, its band drawn as the page loads; the span carries no meaning, so the heading reads as written.
+*/}}
+<header>
+	<hgroup>
+		<h1>What do Americans think about AI <span>today?</span></h1>
+		<p>
+			Americans on AI is a project to understand Americans' evolving views on artificial intelligence.
+		</p>
+		<p>
+			We run a biweekly tracking survey, fielded by NORC at the University of Chicago.
+		</p>
+	</hgroup>
+	{{template "dateline" .}}
+	{{- /*
+		Outlets that have covered the survey, each logo cleared with its outlet. Each links to the outlet's homepage, in a new tab and with no arrow, as the footer's partners' logos do.
+		They go in alphabetical order of their names, ignoring articles: The Atlantic under A, The Hill under H, The New Yorker under N.
+		`9 mk logos` makes the files, each sized so that all cover the same area, the squattest a line of this block tall and the rest shorter; each image is placed at its file's own width and height, rounded, so the row is laid out before the files load.
+	*/}}
+	<aside aria-labelledby="as-seen-in">
+		<h2 id="as-seen-in">As seen in</h2>
+		<ul>
+			<li><a href="https://www.theatlantic.com/" target="_blank" rel="noopener"><img src="static/logos/press/the-atlantic.svg" alt="The Atlantic" width="130" height="20"></a></li>
+			<li><a href="https://dailycaller.com/" target="_blank" rel="noopener"><img src="static/logos/press/daily-caller.svg" alt="Daily Caller" width="109" height="24"></a></li>
+			<li><a href="https://thehill.com/" target="_blank" rel="noopener"><img src="static/logos/press/the-hill.svg" alt="The Hill" width="136" height="19"></a></li>
+			<li><a href="https://www.newyorker.com/" target="_blank" rel="noopener"><img src="static/logos/press/the-new-yorker.svg" alt="The New Yorker" width="152" height="17"></a></li>
+			<li><a href="https://puck.news/" target="_blank" rel="noopener"><img src="static/logos/press/puck.svg" alt="Puck" width="151" height="17"></a></li>
+		</ul>
+	</aside>
+	<aside aria-label="Newsletter">
+		<p>Get updates and analysis via email</p>
+		<a href="https://news.americanson.ai/subscribe" target="_blank" rel="noopener">Subscribe <span aria-hidden="true">↗</span></a>
+	</aside>
+</header>
+<nav aria-label="Contents">
+	<ol>
+		<li><a href="#personal">Personal Experience</a></li>
+		<li><a href="#social">Community &amp; Family Impacts</a></li>
+		<li><a href="#futures">Future Scenarios</a></li>
+		<li><a href="#government">Government Action</a></li>
+	</ol>
+</nav>
+{{body}}
+{{- end}}

@@ -1,0 +1,42 @@
+{{define "styles-crosstabs"}}
+<style>
+	:root {
+		--names: 13em;       /* the row names' column, in ems of the table's type: most responses on a line, the longest on two, and the whole table in a laptop's window */
+		--heads: 5em;        /* the width a group's name wraps at, in ems of the heads' type: a name of two words on two lines, "HS or" over "less", "Some" over "college", a range after its hyphen, and a name of one word whole, however long */
+		--tracking: .04em;   /* the column heads' capitals, spaced a little apart, as capitals are set */
+		--page: 72rem;       /* the page's width: the header's, the facts' and the footer's. The sheet runs on past it, and the full banner's table shows whole on a window of 1440px or wider */
+		--stripe: var(--gray);
+	}
+
+	body > header, body > footer { padding-inline: max(var(--gutter), (100% - var(--page)) / 2); }
+	body > header { border-bottom: 1px solid var(--rule); }
+	body > footer { border-top: 1px solid var(--rule); }
+	main > header, .sheet { margin-inline-start: max(0px, (100% - var(--page)) / 2); }   /* the facts and the sheet start at the page's left edge; the sheet runs on to the window's right edge */
+	main { padding-block-start: var(--space-2); }
+	main > header > * { max-width: calc(var(--measure) + 2 * var(--gutter)); padding-inline: var(--gutter); }   /* the wave's facts: prose at the measure, a gutter in */
+	main > header + .sheet { margin-block-start: var(--space-2); }
+	h1 { font-size: var(--step-3); }   /* the wave's dates: a step below the site's page titles, as the page is a sheet, not a chapter */
+	.notes { font-size: var(--step-0); color: var(--ink-2); }   /* how to read the tables, under the wave's facts: a step down, in the fainter ink */
+	#site-nav.waves ul { gap: var(--space-000) var(--space-00); }   /* the waves, named by their dates, sit closer than the site's pages do, so that a season's fit on a line */
+
+	.sheet { overflow-x: auto; }
+	.sheet > table + table { margin-block-start: var(--space-2); }
+
+	.crosstab { width: max-content; border-collapse: separate; border-spacing: 0; font-size: var(--step-0); white-space: nowrap; }   /* its own width, whatever the window's: narrower, it scrolls rather than squeezes */
+	.crosstab caption { padding: 0 var(--gutter) var(--space-1); font-size: var(--step-1); font-weight: bold; text-align: left; }
+	.crosstab caption > span { display: inline-block; position: sticky; left: var(--gutter); max-width: calc(100vw - 2 * var(--gutter)); white-space: normal; }   /* the window's width less the gutters, a gutter in from the edge, so it always has room to stay; a scrollbar takes less than a gutter */
+	.crosstab th, .crosstab td { padding: var(--space-000) calc(var(--space-000) / 2); text-align: center; }
+	.crosstab tr > :last-child { padding-inline-end: var(--gutter); }
+	.crosstab :is(.dims, .heads) > th { padding-block: var(--space-00); font-size: var(--step--1); text-transform: uppercase; letter-spacing: var(--tracking); vertical-align: bottom; }
+	.crosstab .heads > th { color: var(--ink-2); }
+	.crosstab .heads > th > span { display: inline-block; min-width: min-content; max-width: var(--heads); white-space: normal; }   /* the name wraps at the chosen width, never inside a word; every head sits on the row's baseline, so a wrapped one stands taller */
+	.crosstab .corner, .crosstab th[scope="row"] { position: sticky; left: 0; width: var(--names); min-width: var(--names); padding-inline: var(--gutter) var(--space-00); border-right: 1px solid var(--rule); background: var(--paper); text-align: left; white-space: normal; }
+	.crosstab .dims > .corner { font-size: var(--step-0); text-transform: none; letter-spacing: 0; }
+	.crosstab .heads > th, .crosstab .corner { border-bottom: 1px solid var(--rule); }
+	.crosstab .starts { border-left: 1px solid var(--rule); }
+	.crosstab .item + .item > .dims > * { padding-block-start: var(--space-2); }   /* the two lines between items, inside the cells, so the rules run through */
+	.crosstab .response:nth-child(even) > * { background: var(--stripe); }   /* the item's two head rows come first, so this stripes the second response and every other after it */
+	.crosstab .response + .total > *, .crosstab .base > * { border-top: 1px solid var(--rule); }
+	.crosstab .base { font-size: var(--step--1); color: var(--ink-2); }
+</style>
+{{end}}

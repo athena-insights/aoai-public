@@ -1,0 +1,112 @@
+MKSHELL=rc
+DICTS=dicts
+ROLLUPS=rollups
+
+WAVES=001 002 003 004 005 006 007 008 009
+
+POOLS=`{echo $WAVES | u awk '{for(i=1;i<NF;i++) print $i"+"$(i+1)}'}
+
+POOLDICT=stems.tsv items.tsv options.tsv netdefs.tsv banner.tsv metric_labels.tsv recodes.tsv
+
+all:V: ${WAVES:%=%/$ROLLUPS/stats.tsv} ${POOLS:%=pooled/%/$ROLLUPS/stats.tsv} `{for(p in $POOLS) for(f in $POOLDICT) echo pooled/$p/$DICTS/$f}
+
+RAW_001=001/raws/ATHENA.AmeriSpeakOmnibus.JuneW2/OmnibusW2_Jun2026_ATH.csv
+CODEBOOK_001=001/raws/ATHENA.AmeriSpeakOmnibus.JuneW2/OmnibusW2_Jun2026_ATHENA_Codebook.xlsx
+RAW_002=002/raws/ATHENA.AmeriSpeakOmnibus.JulyW1/OmnibusW1_Jul2026_ATHENA.csv
+CODEBOOK_002=002/raws/ATHENA.AmeriSpeakOmnibus.JulyW1/OmnibusW1_July2026_ATHENA_Codebook.xlsx
+RAW_003=003/raws/ATHENA.AmeriSpeakOmnibus.JulyW2/OmnibusW2_Jul2026_ATHENA.csv
+CODEBOOK_003=003/raws/ATHENA.AmeriSpeakOmnibus.JulyW2/OmnibusW2_Jul2026_ATHENA_Codebook.xlsx
+RAW_004=004/raws/OmnibusW1_Aug2026_ATHENA/OmnibusW1_Aug2026_ATHENA.csv
+CODEBOOK_004=004/raws/OmnibusW1_Aug2026_ATHENA/OmnibusW1_Aug2026_ATHENA_Codebook.xlsx
+RAW_005=005/raws/OmnibusW2_Aug2026_ATHENA/OmnibusW2_Aug2026_ATHENA.csv
+CODEBOOK_005=005/raws/OmnibusW2_Aug2026_ATHENA/OmnibusW2_Aug2026_ATHENA_Codebook.xlsx
+RAW_006=006/raws/OmnibusW1_Sept2026_ATHENA/OmnibusW1_Sept2026_ATHENA.csv
+CODEBOOK_006=006/raws/OmnibusW1_Sept2026_ATHENA/OmnibusW1_Sept2026_ATHENA_Codebook.xlsx
+RAW_007=007/raws/OmnibusW2_Sept2026_ATHENA_updated/OmnibusW2_Sept2026_ATHENA_1.csv
+CODEBOOK_007=007/raws/OmnibusW2_Sept2026_ATHENA_updated/OmnibusW2_Sept2026_ATHENA_Codebook.xlsx
+RAW_008=008/raws/OmnibusW1_Oct2026_ATHENA/OmnibusW1_Oct2026_ATHENA.csv
+CODEBOOK_008=008/raws/OmnibusW1_Oct2026_ATHENA/OmnibusW1_Oct2026_ATHENA_Codebook.xlsx
+RAW_009=009/raws/OmnibusW2_Oct2026_ATHENA/OmnibusW2_Oct2026_ATHENA.csv
+CODEBOOK_009=009/raws/OmnibusW2_Oct2026_ATHENA/OmnibusW2_Oct2026_ATHENA_Codebook.xlsx
+
+001/codebook.tsv: $CODEBOOK_001 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_001 --tsv $target
+
+002/codebook.tsv: $CODEBOOK_002 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_002 --tsv $target
+
+003/codebook.tsv: $CODEBOOK_003 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_003 --tsv $target
+
+004/codebook.tsv: $CODEBOOK_004 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_004 --tsv $target
+
+005/codebook.tsv: $CODEBOOK_005 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_005 --tsv $target
+
+006/codebook.tsv: $CODEBOOK_006 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_006 --tsv $target
+
+007/codebook.tsv: $CODEBOOK_007 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_007 --tsv $target
+
+008/codebook.tsv: $CODEBOOK_008 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_008 --tsv $target
+
+009/codebook.tsv: $CODEBOOK_009 codebook.R
+	u Rscript codebook.R --xlsx $CODEBOOK_009 --tsv $target
+
+001/$ROLLUPS/responses.tsv: $RAW_001 001/codebook.tsv 001/responses.sql responses.rc
+	mkdir -p 001/$ROLLUPS
+	rc ./responses.rc 001 $RAW_001 $target
+
+002/$ROLLUPS/responses.tsv: $RAW_002 002/codebook.tsv 002/responses.sql responses.rc
+	mkdir -p 002/$ROLLUPS
+	rc ./responses.rc 002 $RAW_002 $target
+
+003/$ROLLUPS/responses.tsv: $RAW_003 003/codebook.tsv 003/responses.sql responses.rc
+	mkdir -p 003/$ROLLUPS
+	rc ./responses.rc 003 $RAW_003 $target
+
+004/$ROLLUPS/responses.tsv: $RAW_004 004/codebook.tsv 004/responses.sql responses.rc
+	mkdir -p 004/$ROLLUPS
+	rc ./responses.rc 004 $RAW_004 $target
+
+005/$ROLLUPS/responses.tsv: $RAW_005 005/codebook.tsv 005/responses.sql responses.rc
+	mkdir -p 005/$ROLLUPS
+	rc ./responses.rc 005 $RAW_005 $target
+
+006/$ROLLUPS/responses.tsv: $RAW_006 006/codebook.tsv 006/responses.sql responses.rc
+	mkdir -p 006/$ROLLUPS
+	rc ./responses.rc 006 $RAW_006 $target
+
+007/$ROLLUPS/responses.tsv: $RAW_007 007/codebook.tsv 007/responses.sql responses.rc
+	mkdir -p 007/$ROLLUPS
+	rc ./responses.rc 007 $RAW_007 $target
+
+008/$ROLLUPS/responses.tsv: $RAW_008 008/codebook.tsv 008/responses.sql responses.rc
+	mkdir -p 008/$ROLLUPS
+	rc ./responses.rc 008 $RAW_008 $target
+
+009/$ROLLUPS/responses.tsv: $RAW_009 009/codebook.tsv 009/responses.sql responses.rc
+	mkdir -p 009/$ROLLUPS
+	rc ./responses.rc 009 $RAW_009 $target
+
+^([0-9]+)/$ROLLUPS/(stats|nets|weights|wave)\.tsv:R: \1/$ROLLUPS/responses.tsv \1/$DICTS/items.tsv \1/$DICTS/options.tsv \1/$DICTS/netdefs.tsv \1/$DICTS/recodes.tsv rollups.R
+	u Rscript rollups.R $stem1
+
+pooled/([0-9]+)\+([0-9]+)/$DICTS/([a-z_]+\.tsv):R: \1/$DICTS/\3 \2/$DICTS/\3
+	mkdir -p pooled/$stem1+$stem2/$DICTS
+	if(! cmp -s $stem1/$DICTS/$stem3 $stem2/$DICTS/$stem3) { echo pooled/$stem1+$stem2: $DICTS/$stem3 differs between the members >[1=2]; exit 1 }
+	cp $stem2/$DICTS/$stem3 $target
+
+pooled/([0-9]+)\+([0-9]+)/$ROLLUPS/(responses|stats|nets|weights|wave)\.tsv:R: \1/$ROLLUPS/responses.tsv \2/$ROLLUPS/responses.tsv ${POOLDICT:%=pooled/\1+\2/$DICTS/%} rollups.R
+	u Rscript rollups.R pooled/$stem1+$stem2 $stem1 $stem2
+
+clean:V:
+	for(w in $WAVES) rm -f $w/$ROLLUPS/^(responses.tsv stats.tsv nets.tsv weights.tsv wave.tsv)
+	for(p in $POOLS) rm -rf pooled/$p/$ROLLUPS pooled/$p/$DICTS
+
+BUILT=`{for(w in $WAVES) echo $w/$ROLLUPS $w/codebook.tsv; for(p in $POOLS) echo pooled/$p}
+
+<../study.mk

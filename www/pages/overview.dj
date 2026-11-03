@@ -1,0 +1,131 @@
+{{/* Overall's body: the introduction and the sections, in djot, which overview.html places with {{body}}. */}}
+::: intro
+Overall, *Americans are wary of AI*{.finding}: they are far more concerned than excited; majorities say it's having negative impacts in their communities and making family life worse; and most see dealing with its harms as a priority for government action.
+
+Two news events have shifted these views since we began tracking: [OpenAI's disclosure in July](https://www.reuters.com/business/its-ai-agent-spent-days-hacking-company-sources-say-openai-did-not-notice-week-2026-07-24/) that two of its models had escaped their testing environment and hacked another company, Hugging Face, and [the resignation of an Anthropic employee, Jacob Coxon, in September](https://www.wsj.com/tech/ai/anthropic-researcher-quits-over-out-of-control-ai-fears-707b7628).
+
+{{/* The takeaways, one per block in the page's order, each a run-in in bold with its figures: levels from the latest pool, moves between the waves on either side of an event or from the first wave. */}}
+Here are some key takeaways from our surveys so far:
+
+- *Most Americans feel they have little say.* Among all adults, {{.Share "inevitable" "008+009"}} say AI is coming into their lives whether they want it or not, and {{.Share "can-shape" "008+009"}} say people like them can shape it.
+- *Concern rose after the Hugging Face disclosure.* The excited share fell from {{.Share "excited" "002"}} to {{.Share "excited" "003"}}, and the very concerned rose from {{.Share "very-concerned" "002"}} to {{.Share "very-concerned" "003"}}.
+- *Loss of control is the scenario rising fastest.* Among all adults, {{.Share "already-unintended" "009"}} say AI behaving in ways its developers did not intend is already happening, up from {{.Share "already-unintended" "001"}} in {{.When "001"}}.
+- *Jobs and misinformation stand out.* Among all adults, {{.Share "worse-jobs" "008+009"}} say AI is making job security worse and {{.Share "better-jobs" "008+009"}} better, and {{.Share "seeing-fake" "008+009"}} are seeing, or starting to see, people struggle to tell what's real from fake.
+- *Most want the government to do more.* Among all adults, {{.Share "any-ai-harms" "008+009"}} call dealing with AI harms a top or important priority. On children and young people, {{.Share "little-children" "008+009"}} say the government is doing too little and {{.Share "much-children" "008+009"}} too much.
+
+Our findings below draw on *{{text "basis" .}}*, which we break down in our [groups](groups/) page.
+
+{{photo "driving.jpg" "A driver in a bucket hat at the wheel of a car, seen from the back seat" "@fujiphilm / Unsplash"}}
+:::
+
+{#personal}
+## Personal Experience
+
+Americans are *far more likely to be concerned than excited*{.finding} about AI's growing role in society.
+Among all adults, {{.Share "concerned" "008+009"}} say they are concerned, including {{.Share "very-concerned" "008+009"}} who are very concerned.
+In contrast, {{.Share "excited" "008+009"}} say they are excited.
+
+{{chart "excited-or-concerned"}}
+
+*Concern rose after Hugging Face*{.finding}, and has stayed higher since: from {{.Share "concerned" "002"}} in {{.When "002"}} to {{.Share "concerned" "003"}} in {{.When "003"}} and {{.Share "concerned" "009"}} in {{.When "009"}} ({{.Change "concerned" "002" "009"}}).
+
+Concern also intensified after each event: those saying they are very concerned rose from {{.Share "very-concerned" "002"}} to {{.Share "very-concerned" "003"}} after Hugging Face ({{.Change "very-concerned" "002" "003"}}), and from {{.Share "very-concerned" "005"}} to {{.Share "very-concerned" "006"}} after Jacob Coxon's resignation ({{.Change "very-concerned" "005" "006"}}).
+
+{{chart "concerned-over-time"}}
+
+*Excitement fell after Hugging Face too, and has stayed lower*{.finding}: between the same two surveys, the excited share fell from {{.Share "excited" "002"}} to {{.Share "excited" "003"}} ({{.Change "excited" "002" "003"}}).
+
+{{chart "excited-over-time"}}
+
+*Most Americans say AI is coming into their lives whether they want it or not*{.finding}.
+Among all adults, {{.Share "inevitable" "008+009"}} choose that statement, and {{.Share "can-shape" "008+009"}} say people like them can shape how much AI is part of their lives.
+
+{{chart "ours-to-shape-or-inevitable"}}
+
+{{/* The link on to the same section on Groups, set aside while we see how the page reads without it:
+{.forward}
+[Groups [→]{aria-hidden=true}](groups/#personal)
+*/}}
+{{photo "park.jpg" "Children jump for a football on a park lawn in front of food trucks and office towers, under trees in autumn color" "@fujiphilm / Unsplash"}}
+
+{#social}
+## Community & Family Impacts
+
+On balance, *more Americans report negative impacts on their communities rather than positive ones*{.finding}.
+Most Americans say they are seeing people in their communities struggling to tell what's real from fake because of AI.
+Among all adults, {{.Share "seeing-fake" "008+009"}} say they are seeing it or are starting to.
+
+A smaller majority are seeing people lose connections to others ({{.Share "seeing-connections" "008+009"}}).
+About half are seeing people pressured to do more, faster ({{.Share "seeing-pressure" "008+009"}}).
+On the positive side, just as many are seeing people save time on everyday tasks ({{.Share "seeing-time" "008+009"}}).
+Just {{.Share "seeing-healthcare" "008+009"}} are seeing people get better health care.
+
+{{chart "what-people-are-seeing"}}
+
+*More Americans say AI is making things worse rather than better for American families*{.finding}.
+The widest gap is on job security: {{.Share "worse-jobs" "008+009"}} of adults say AI is making it worse, compared to {{.Share "better-jobs" "008+009"}} who say better.
+Most also say it is making children's well-being ({{.Share "worse-children" "008+009"}}) and families' outlook on the future ({{.Share "worse-outlook" "008+009"}}) worse.
+
+The gap is smallest on household finances, where {{.Share "worse-finances" "008+009"}} say worse and {{.Share "better-finances" "008+009"}} better.
+But {{.Share "no-effect-finances" "008+009"}} say it's having no effect, the most of the four.
+
+{{chart "better-or-worse"}}
+
+{{/* The link on to the same section on Groups, set aside while we see how the page reads without it:
+{.forward}
+[Groups [→]{aria-hidden=true}](groups/#social)
+*/}}
+{{photo "lookout.jpg" "A family at a railing, seen from behind, looking out across a wooded gorge at a cable car" "@fujiphilm / Unsplash"}}
+
+{#futures}
+## Future Scenarios
+
+*Most Americans think consequential future scenarios involving AI are likely, or are already happening*{.finding}: from {{.Share "likely-breakthroughs" "008+009"}} for major scientific and medical breakthroughs to {{.Share "likely-unintended" "008+009"}} for losing control of AI systems.
+
+{{chart "unlikely-or-likely"}}
+
+What has changed is how many say some of these things are already happening.
+
+{{chart "already-happening-over-time"}}
+
+About a third now say AI is already smarter than humans at most tasks: {{.Share "already-smarter" "009"}} in {{.When "009"}}, up from {{.Share "already-smarter" "001"}} in {{.When "001"}} ({{.Change "already-smarter" "001" "009"}}).
+
+*The largest rise is in loss of control: AI behaving in ways its developers did not intend*{.finding}.
+The share who say it is already happening has climbed from {{.Share "already-unintended" "001"}} in {{.When "001"}} to {{.Share "already-unintended" "009"}} in {{.When "009"}} ({{.Change "already-unintended" "001" "009"}}).
+At the same time, the share who say it is likely fell from {{.Share "likely-to-happen-unintended" "001"}} to {{.Share "likely-to-happen-unintended" "009"}} ({{.Change "likely-to-happen-unintended" "001" "009"}}).
+The lines have crossed: in the three latest surveys, more Americans say it is already happening than say it is likely to in the future, {{.Share "already-unintended" "009"}} to {{.Share "likely-to-happen-unintended" "009"}} in {{.When "009"}}.
+
+{{chart "loss-of-control-over-time"}}
+
+{{/* The link on to the same section on Groups, set aside while we see how the page reads without it:
+{.forward}
+[Groups [→]{aria-hidden=true}](groups/#futures)
+*/}}
+{{photo "streetcar.jpg" "A streetcar operator at the controls, seen from behind, with the city street ahead through the windows" "@fujiphilm / Unsplash"}}
+
+{#government}
+## Government Action
+
+*Most Americans say the government should make dealing with harms from artificial intelligence a priority*{.finding}.
+Among all adults, {{.Share "any-ai-harms" "008+009"}} say it should be a priority, with {{.Share "top-ai-harms" "008+009"}} calling it a top priority and {{.Share "important-ai-harms" "008+009"}} an important but lower one.
+
+Among the seven issues we track, AI harms ranks fifth: behind inflation and health care, then jobs and crime, and ahead of immigration and climate change.
+
+{{chart "how-much-of-a-priority"}}
+
+*The share of Americans calling AI harms a top priority rose after Jacob Coxon's resignation*{.finding}: from {{.Share "top-ai-harms" "005"}} in {{.When "005"}} to {{.Share "top-ai-harms" "006"}} in {{.When "006"}} and {{.Share "top-ai-harms" "007"}} in {{.When "007"}} ({{.Change "top-ai-harms" "005" "007"}}). It has since fallen back, to {{.Share "top-ai-harms" "008"}} in {{.When "008"}} and {{.Share "top-ai-harms" "009"}} in {{.When "009"}} ({{.Change "top-ai-harms" "007" "009"}}).
+
+{{chart "ai-harms-over-time"}}
+
+Wherever AI ranks among their priorities, *more Americans say the government is doing too little about it than too much*{.finding}.
+
+On AI's effects on children and young people, {{.Share "little-children" "008+009"}} of adults say too little and {{.Share "much-children" "008+009"}} too much, and the split is similar on its environmental footprint and its effects on workers and jobs.
+
+The gap is smallest on American competitiveness, where {{.Share "little-competitiveness" "008+009"}} say too little, {{.Share "much-competitiveness" "008+009"}} too much and {{.Share "unsure-competitiveness" "008+009"}} aren't sure.
+
+{{chart "too-much-or-too-little"}}
+
+{{/* The link on to the same section on Groups, set aside while we see how the page reads without it:
+{.forward}
+[Groups [→]{aria-hidden=true}](groups/#government)
+*/}}

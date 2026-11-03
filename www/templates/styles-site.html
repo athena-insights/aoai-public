@@ -1,0 +1,159 @@
+{{define "styles-site"}}
+<style>
+	:root {
+		--highlight: oklch(from var(--gold) 0.9 0.12 h);   /* key findings: the gold's hue at the hairline rung's lightness, at the chroma the gamut allows there */
+		--neg-0: var(--orange);
+		--neg-1: color-mix(in oklab, var(--orange), var(--paper));
+		--pos-1: color-mix(in oklab, var(--purple), var(--paper));
+		--pos-0: var(--purple);
+		--resid-0: var(--rung-65);     /* a residual's bar, such as not sure */
+		--resid-1: var(--rung-85);     /* a residual's lighter step */
+		--chart-grid: var(--rung-85);
+		--chart-axis: var(--rung-65);  /* the axis line, and the pointer's */
+		--band-opacity: .12;   /* a line's margin-of-error band, in the line's color; the legend's swatch for it too */
+		--group-party-democrat: #0077bd;     /* oklch(0.55 0.14 245) */
+		--group-party-republican: #bb002f;   /* oklch(0.50 0.20 20) */
+		--category-1: var(--ink);
+		--category-2: var(--ink);
+		--category-2-dash: dashed;
+		--category-3: var(--ink-3);
+		--category-4: var(--ink-3);
+		--category-4-dash: dashed;
+	}
+
+	h1 { font-size: var(--step-4); }
+	section > h2 { font-family: var(--display); font-size: var(--step-3); }
+
+	body > header, body > footer { padding-inline: max(var(--gutter), (100% - var(--layout)) / 2); background: var(--paper-2); }
+	main > header { background: var(--paper-2); }
+	main > :is(header, section, .intro) {
+		display: grid;
+		grid-template-columns:
+			[full-start] minmax(var(--gutter), 1fr)
+			[wide-start] minmax(0, calc((var(--layout) - var(--measure)) / 2))
+			[content-start] min(var(--measure), 100% - 2 * var(--gutter)) [content-end]
+			minmax(0, calc((var(--layout) - var(--measure)) / 2)) [wide-end]
+			minmax(var(--gutter), 1fr) [full-end];
+	}
+	main > :is(header, section, :where(.intro)) > * { grid-column: content; }   /* :where, so that a part placed in the wide column by an element selector wins */
+	main > header { padding-block: var(--space-2); }   /* the page's gray opening, around its header */
+
+	main p.forward { text-align: end; }
+
+	main > header dl { display: grid; grid-template-columns: max-content auto; justify-content: start; column-gap: var(--space-000); font-size: var(--step-0); color: var(--ink-2); }
+	main > header > aside { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-00) var(--space-1); font-size: var(--step-0); text-align: center; }
+	main > header > aside:has(> ul) { flex-direction: column; gap: var(--space-00); }
+	main > header > aside h2 { font-size: inherit; font-weight: normal; color: var(--ink-2); }
+	main > header > aside ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-00) var(--space-1); padding: 0; }
+	main > header > aside img { display: block; }
+	main > header > :is(hgroup, aside:has(> ul)) { grid-column: wide; }
+	hgroup { text-align: center; text-wrap: balance; }
+	hgroup > * + * { margin-block-start: var(--space-1); }   /* a line between its blocks, the headline included: two steps above a page title, it takes a block's line, not a heading's half */
+	hgroup > h1 { font-size: var(--step-6); }
+	hgroup > p, .intro > p:first-child { font-size: var(--step-2); }
+	hgroup > p { max-width: var(--measure); margin-inline: auto; }   /* the deck at the prose's measure, inside the wide column the headline takes */
+	hgroup ~ dl { justify-self: center; }
+	main > header > aside p { color: var(--ink-2); }
+	main > header > aside > a { padding: var(--space-00) var(--space-1); background: var(--ink-2); color: var(--paper-2); font-weight: bold; text-decoration: none; }   /* the text in the band's own paper, as if punched out of it */
+	@media (hover: hover) {
+		main > header > aside > a:hover { background: var(--ink); }
+	}
+
+	main > nav { position: sticky; top: 0; z-index: 1; margin-block-end: var(--space-2); background: var(--paper-2); border-block: 1px solid var(--rule); font-size: var(--step-0); }
+	main > nav ol { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-inline: max(var(--gutter), (100% - var(--layout)) / 2); mask-image: linear-gradient(to right, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent); }
+	main > nav li { flex: none; }
+	main > nav li:first-child { margin-inline-start: auto; }
+	main > nav li:last-child { margin-inline-end: auto; }
+	main > nav a { display: block; padding-block: var(--space-000); white-space: nowrap; }
+	@media (prefers-reduced-motion: no-preference) {
+		main > nav ol { scroll-behavior: smooth; }
+	}
+
+	.finding { font-weight: inherit; }
+	.finding, hgroup h1 span { background: linear-gradient(transparent 40%, var(--highlight) 40%) no-repeat left / 100% 100%; }
+	@media screen and (prefers-reduced-motion: no-preference) {
+		.finding, hgroup h1 span { animation: draw .7s ease-in-out both; }
+	}
+	@keyframes draw { from { background-size: 0 100%; } }
+
+	figure.chart { padding-block: var(--space-00); border-block: 1px solid var(--rule); }
+	figure.chart > * + * { margin-block-start: var(--space-000); }
+	figure.chart figcaption { display: grid; grid-template-columns: 1fr auto; align-items: baseline; column-gap: var(--space-00); }   /* the title's line, with the downloads at its right end, then the subtitle across both columns */
+	figcaption h3 { grid-column: 1; grid-row: 1; font-size: var(--step-1); }
+	.downloads { grid-column: 2; grid-row: 1; display: flex; gap: var(--space-00); margin: 0; }
+	.download { padding: 0; border: 0; background: none; font: inherit; white-space: nowrap; cursor: pointer; }
+	.subtitle { grid-column: 1 / -1; font-size: var(--step-0); }
+	.subtitle, .wording, .foot, .download { color: var(--ink-2); }
+	.wording, .foot, .download { font-size: var(--step--1); }
+	.wording { list-style: none; padding: 0; }
+	.foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 var(--space-00); }
+	.foot p { flex: 1 1 16em; margin: 0; }   /* the facts wrap in their own lines; narrower than this, the link drops below them */
+	.foot a, .download, [role="doc-noteref"], [role="doc-backlink"] { color: inherit; text-decoration: none; }   /* bare, as the site's navigation links are: each stands apart from the facts at its line's end, a download's arrow says what it does, and the source line is plain on the saved image; under the pointer they take the ink and an underline, as the navigation does */
+	.download:disabled { color: var(--ink-3); cursor: default; }   /* faded while the image is being made */
+	@media (hover: hover) {
+		.foot a:hover, .download:hover, [role="doc-noteref"]:hover, [role="doc-backlink"]:hover { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .3em; }
+	}
+	.chart .plot { height: calc(var(--space-1) * 10); font-size: var(--step-0); }
+	@media (width < 36rem) {
+		main > section > figure.chart { grid-column: full; }
+		figure.chart > * { margin-inline: var(--gutter); }
+		figure.chart > .plot { margin-inline-end: var(--space-00); }
+	}
+	.legend { list-style: none; display: flex; flex-wrap: wrap; gap: 0 var(--space-00); padding: 0; font-size: var(--step-0); color: var(--ink-2); }
+	.legend li::before { content: ""; display: inline-block; width: .75em; height: .75em; margin-inline-end: var(--space-000); border-radius: 50%; background: var(--color); }
+	.legend.lines li::before { width: 1.25em; height: 0; border-radius: 0; background: none; border-top: 2px var(--dash, solid) var(--color); vertical-align: .3em; }   /* a line, in its dash */
+	.legend li:has(.bands)::before { content: none; }
+	.bands { padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: pointer; }
+	.bands::before { content: ""; display: inline-block; box-sizing: border-box; width: 1.25em; height: .6em; margin-inline-end: var(--space-000); vertical-align: .05em; border: 1px solid var(--chart-axis); background: var(--ink); opacity: var(--band-opacity); }
+	.bands span { color: var(--ink-3); }
+	.bands[aria-pressed="false"] { color: var(--ink-3); }
+	.bands[aria-pressed="false"]::before { background: none; opacity: 1; }
+	.legend.bars .bands::before { border: 0; opacity: 1; background: linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat, linear-gradient(currentColor, currentColor) left / 1.5px 100% no-repeat, linear-gradient(currentColor, currentColor) right / 1.5px 100% no-repeat; }
+	.legend.bars .bands[aria-pressed="false"]::before { color: var(--chart-axis); }
+	@media (hover: hover) {
+		.bands:hover { color: var(--ink); }
+	}
+
+	figure.photo { grid-column: wide; padding-block-start: var(--space-2); }   /* with the block's own line over it, three lines from the chart before */
+	main > :is(section, .intro):has(> figure.photo:last-child) + section { margin-block-start: var(--space-1); }   /* a photo closes the block before the section it opens, so the gap to the section's name is a line, not a section's two */
+	figure.photo img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+	figure.photo figcaption { margin-block-start: var(--space-000); padding-inline: max(0px, (100% - var(--measure)) / 2); text-align: end; font-size: var(--step--1); color: var(--ink-2); }   /* the credit ends where the prose does: the picture's width less the measure, halved, which is nothing once the window is too narrow for the layout column */
+	@media (width < 36rem) {
+		main > :is(section, .intro) > figure.photo { grid-column: full; }
+		figure.photo img { aspect-ratio: 3 / 4; }
+		figure.photo figcaption { padding-inline: var(--gutter); }
+	}
+
+	main > :is(section, .intro) > :is(ul, ol) > li + li { margin-block-start: var(--space-00); }
+
+	.notes { font-size: var(--step-0); color: var(--ink-2); }
+
+	sup:has(> [role="doc-noteref"]) { font-size: var(--step--1); line-height: 0; color: var(--ink-2); }
+	[role="doc-endnotes"]::before { content: ""; grid-column: content; border-block-start: 1px solid var(--rule); }
+	[role="doc-endnotes"] h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+	[role="doc-endnotes"] ol { padding-inline-start: var(--space-1); font-size: var(--step-0); color: var(--ink-2); }
+	[role="doc-endnotes"] li:target { color: var(--ink); }
+
+	blockquote { border-inline-start: 1px solid var(--rule); padding-inline-start: var(--space-1); }
+
+	pre { margin: 0; font-size: var(--step-0); }
+
+	.sheet { overflow-x: auto; }
+	table { border-collapse: collapse; font-size: var(--step-0); white-space: nowrap; }
+	th, td { padding-block: var(--space-000); padding-inline: var(--space-1) 0; text-align: right; }
+	tr > :first-child { padding-inline-start: 0; }
+	.left { text-align: left; }   /* a column of words, the dates, by the editor's word on its head and its cells; figures and links align right under their heads */
+	thead th { border-bottom: 1px solid var(--rule); }
+	.swatch { display: block; width: 3em; height: 1.5em; background: var(--swatch); outline: 1px solid var(--rule); outline-offset: -1px; }
+	.swatch.band { background: rgb(from var(--swatch) r g b / var(--band-opacity)); }
+	.strip { display: flex; height: 2em; }
+	.strip > span { flex: 1; background: var(--swatch); }
+	.strip > .gap { flex: 0 0 var(--space-00); background: none; }
+	table.colors { width: 100%; white-space: normal; }
+	table.colors code { white-space: nowrap; }
+	table.colors .where { text-align: left; width: 50%; }
+	@media (width < 36rem) {
+		main > section > .sheet { grid-column: full; padding-inline: var(--gutter); }
+	}
+</style>
+{{end}}

@@ -1,0 +1,27 @@
+item	label
+q_priorities:jobs	Jobs
+q_priorities:inflation	Inflation
+q_priorities:ai_harms	AI harms
+q_priorities:immigration	Immigration
+q_priorities:healthcare	Health care
+q_priorities:crime	Crime
+q_priorities:climate	Climate change
+q_affect:response	Feelings about AI
+q_agency:response	Shaping AI's role
+q_community:saving_time	Saving time
+q_community:pressured	Pressure to do more, faster
+q_community:losing_connections	Losing connections
+q_community:real_vs_fake	Struggling to tell what's real
+q_community:better_healthcare	Better health care
+q_families:job_security	Job security
+q_families:outlook	Outlook on the future
+q_families:children	Children's well-being
+q_families:finances	Household finances
+q_government:children	Children and young people
+q_government:environment	Environmental footprint
+q_government:workers	Workers and jobs
+q_government:competitiveness	American competitiveness
+q_futures:smarter	Superintelligence
+q_futures:unintended	Loss-of-control
+q_futures:breakthroughs	Breakthroughs
+q_futures:wmd	WMDs

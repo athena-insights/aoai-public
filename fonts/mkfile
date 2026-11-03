@@ -1,0 +1,20 @@
+MKSHELL=rc
+
+ORDER=Klim-Order-26050707
+ZIP=american-grotesk.zip
+AGE=american-grotesk.zip.age
+
+AGE_PUB=age1dwvp0560fflzxf6c7kevvcwfsdszz5tw60t38u307atpny6u5ecquzzznt
+<|cat ../.env >[2]/dev/null || true
+
+unpack-fonts:VQ:
+	if(~ $#AGE_FONTS_KEY 0) { echo 'AGE_FONTS_KEY unset: put the fonts key in .env at the root, or the environment (README, Encrypted archives)' >[1=2]; exit 1 }
+	if(! ~ $AGE_FONTS_KEY AGE-SECRET-KEY-1*) { echo 'AGE_FONTS_KEY is not a secret key: it should be the one line beginning AGE-SECRET-KEY-1, with nothing around it, not even quotes or a space ('$#AGE_FONTS_KEY' word(s) seen)' >[1=2]; exit 1 }
+	echo unpacking $ORDER
+	age -d -i <{echo $AGE_FONTS_KEY} $AGE > $ZIP
+	u unzip -n $ZIP
+
+pack-fonts:V:
+	rm -f $ZIP
+	u zip -r $ZIP $ORDER -x '*.DS_Store'
+	age -r $AGE_PUB $ZIP > $AGE.part && mv $AGE.part $AGE

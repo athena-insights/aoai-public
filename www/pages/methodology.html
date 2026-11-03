@@ -1,0 +1,152 @@
+{{define "content"}}
+<header>
+	<h1>{{.Title}}</h1>
+	<p>
+		This page covers the methodology for the current series of our biweekly tracking survey.
+	</p>
+</header>
+<section aria-labelledby="questionnaire">
+	<h2 id="questionnaire">Questionnaire</h2>
+	<p>
+		We ask the same 26 items in every wave, in seven questions grouped in blocks. Each question is a stem with one or more items.
+		Within a block, we randomize item order and rotate response scales between forward and reverse order, with "Not sure" or its equivalent always last.
+		We do not force responses on any item; respondents are free to skip.
+	</p>
+	<p>
+		The questionnaire is <a href="https://docs.google.com/document/d/1bIEjinwFHi_3S1j87x0QNNPTFOJifGTI_4fsjrI-Ne0/view">available as a Google Doc</a>.
+	</p>
+</section>
+<section aria-labelledby="sample">
+	<h2 id="sample">Sample</h2>
+	<p>
+		We survey US adults aged 18 and over living in households, with a probability sample drawn from a household panel. We target 1,000 completed interviews per base wave.
+	</p>
+	<p>
+		Every other wave, we add oversamples. Each oversample wave has at least 400 completed interviews in each of four age bands (18–34, 35–49, 50–64, 65 and over), and at least 400 Black non-Hispanic and 400 Hispanic adults.
+		The oversamples increase the precision of our estimates for these groups. Weighting restores population proportions, so whole-sample estimates are unaffected.
+	</p>
+	<p>
+		We require each wave to exclude panelists from the immediately previous wave, which lets us pool adjacent waves for more precision.
+	</p>
+</section>
+<section aria-labelledby="fielding">
+	<h2 id="fielding">Fielding</h2>
+	<p>
+		Our survey is fielded by <a href="https://www.norc.org">NORC at the University of Chicago</a>, on its <a href="https://amerispeak.norc.org">AmeriSpeak panel</a>:
+	</p>
+	<blockquote>
+		<p>
+			Funded and operated by NORC at the University of Chicago, AmeriSpeak® is a probability-based panel designed to be representative of the US household population.
+			Randomly selected US households are sampled using area probability and address-based sampling, with a known, non-zero probability of selection from the NORC National Sample Frame.
+			These sampled households are then contacted by US mail, telephone, and field interviewers (face to face).
+			The panel provides sample coverage of approximately 97% of the U.S. household population.
+			Those excluded from the sample include people with P.O. Box only addresses, some addresses not listed in the USPS Delivery Sequence File, and some newly constructed dwellings.
+			While most AmeriSpeak households participate in surveys by web, non-internet households can participate in AmeriSpeak surveys by telephone.
+			Households without conventional internet access but having web access via smartphones are allowed to participate in AmeriSpeak surveys by web.
+		</p>
+	</blockquote>
+	<p>
+		Interviews are conducted online and by telephone, in English, over a field period of about three days.
+		About 96% of interviews are online and 4% by telephone.
+	</p>
+	<p>
+		In general, NORC excludes panelists who completed either of the two preceding waves.
+		Our design requires only that each wave excludes panelists from the previous wave.<sup><a href="#fn1" id="fnref1" role="doc-noteref" aria-label="Note 1">1</a></sup>
+	</p>
+</section>
+<section aria-labelledby="weighting">
+	<h2 id="weighting">Weighting</h2>
+	<p>
+		We use NORC's weights for our own analyses.
+		The weights start from the panel's person-level weights.
+		NORC adjusts them for the wave's sample selection and for interview non-response, then rakes them:
+	</p>
+	<blockquote>
+		<p>
+			Nonresponse adjusted weights are then calibrated to match population benchmarks through raking ratio adjustments.
+			Raking adjusts the weights such that the marginal weight totals match benchmark totals on a specified set of raking variables.
+			The following person-level characteristics are used in the raking adjustments: Age; Sex; Census Division; Race/Ethnicity; Education; Age by Sex; Age by Race/Ethnicity; Race/Ethnicity by Sex.
+			Population benchmarks for each dimension are obtained from the most recent March CPS supplement.
+		</p>
+	</blockquote>
+	<p>
+		NORC trims extreme weights as part of the raking, letting the weights depart from exact calibration where that lowers their variability.
+		It aims for a design effect under 2, so that the effective sample size is at least half the sample.
+	</p>
+	<p>
+		For us, NORC rakes the weights we use a second time, to 2024 presidential vote choice with non-voters as a category.
+		Party identification is not itself a weighting dimension, so its weighted share varies by wave.
+	</p>
+	<p>
+		Along with weights, NORC delivers the variance strata and primary sampling units of the wave's sample.
+		We use them with the weights for our analyses.
+	</p>
+</section>
+<section aria-labelledby="analysis">
+	<h2 id="analysis">Analysis</h2>
+	<p>We define the following dimensions from NORC's panelist profile:</p>
+	<ul>
+		<li><b>Sex</b> is female and male.</li>
+		<li><b>Party</b> is NORC's three-category measure: Democrat, Republican and Independent. Leaners, who favor a party without identifying with it, are assigned to that party. A small Unknown group remains in the base.</li>
+		<li><b>Age</b> is 18 to 34, 35 to 49, 50 to 64, and 65 and over.</li>
+		<li><b>Ethnicity</b> is Hispanic, and non-Hispanic white, Black, Asian and Pacific Islander, two or more races, and other.</li>
+		<li><b>Education</b> is high school or less, some college, and bachelor's degree or more.</li>
+		<li><b>Household income</b> is under $50,000, $50,000 to $99,999, and $100,000 or more.</li>
+		<li><b>Metropolitan status</b> is residence in a core-based statistical area.</li>
+	</ul>
+	<p>
+		We compute the share of each response, our estimates, for the full sample and for each group of each dimension.
+		Every item's base holds all its respondents, with "Not sure", "No answer" and similar responses among them.
+	</p>
+	<p>
+		For each estimate, we calculate standard errors by Taylor-series linearization under the wave's sample design, with the weights, variance strata and primary sampling units.
+	</p>
+	<p>For the full sample:</p>
+	<ul>
+		<li>We compute Kish's design effect from the weights alone, and the effective sample size as the sample size divided by it. Design effects are typically 1.6 to 2.1.</li>
+		<li>We also compute a single, conventional margin of error at 95% confidence from the effective sample size at a 50% share. Whole-sample margins are about ±4 points for a base wave and ±2.5 to ±3.4 for an oversample wave.</li>
+	</ul>
+	<p>
+		For a pool, we combine two adjacent waves into one sample of about 2,900 to 3,500 adults, to sharpen group estimates. The two waves have no respondents in common.
+		We treat the wave as a stratum of the pooled design, and we scale each wave's weights by its share of the pool's effective sample size.
+		Pooled margins for the whole sample are about ±2.1 to ±2.6 points.
+	</p>
+</section>
+<section aria-labelledby="reporting">
+	<h2 id="reporting">Reporting</h2>
+	<p>
+		For each wave we report its sample size, field dates, design effect, effective sample size and full-sample margin of error.
+		We also report its unweighted sample composition by every reporting group.
+	</p>
+	<p>
+		For each item in a wave, we report the weighted share of every response. We report it for the full sample and for each group: by sex, party, age, ethnicity, education, household income and metropolitan status.
+		We include a margin of error at 95% confidence for every estimate, based on its design-based standard error.
+	</p>
+	<p>
+		For each question, we may also report totals and nets.
+	</p>
+	<ul>
+		<li>A total is the weighted share of a group of related responses, such as "Very concerned" and "Somewhat concerned" together.</li>
+		<li>A net is the difference between two totals, in percentage points. Concerned minus excited, for example, is net concern.</li>
+	</ul>
+	<p>
+		Alongside the weighted shares, we also report the unweighted count of respondents for each share and the unweighted base of each group.
+	</p>
+	<p>
+		For a pool we report the same figures over the two waves as one sample, with its own sample size, effective sample size and margin.
+	</p>
+	<p>A few conventions in our reporting:</p>
+	<ul>
+		<li>Shares are rounded to whole percentage points. A share above zero that rounds to zero is shown as "&lt;1".</li>
+		<li>We may exclude a "No answer" share when it rounds to 2% or less on every item of the question.</li>
+		<li>We may exclude any group when its unweighted base is less than 100 respondents.</li>
+		<li>Nets are reported in percentage points, abbreviated "pp", with a positive or negative sign: "+X pp" or "−Y pp".</li>
+	</ul>
+</section>
+<section role="doc-endnotes" aria-labelledby="footnotes">
+	<h2 id="footnotes">Notes</h2>
+	<ol>
+		<li id="fn1"><p>The first two waves inadvertently included the same 17 individuals, which is immaterial in practice. <a href="#fnref1" role="doc-backlink" aria-label="Back to the text"><span aria-hidden="true">↑</span></a></p></li>
+	</ol>
+</section>
+{{- end}}

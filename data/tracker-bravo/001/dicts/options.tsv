@@ -1,0 +1,42 @@
+q_id	response	rank	bucket	bucket_ord	value	dk	presented
+q_priorities	Top priority	1	high_priority	1	3	0	true
+q_priorities	Important but lower priority	2	high_priority	1	2	0	true
+q_priorities	Not too important	3	low_priority	2	1	0	true
+q_priorities	Not a priority at all	4	low_priority	2	0	0	true
+q_priorities	Not sure	5	dk	4		1	true
+q_priorities	No answer	6	no_answer	5		1	false
+q_affect	Very excited	1	excited	1	-2	0	true
+q_affect	Somewhat excited	2	excited	1	-1	0	true
+q_affect	Somewhat concerned	3	concerned	2	1	0	true
+q_affect	Very concerned	4	concerned	2	2	0	true
+q_affect	None of these are close to how I feel	5	dk	4		1	true
+q_affect	No answer	6	no_answer	5		1	false
+q_agency	People like me can shape how much AI is part of our lives	1	can_shape	1	0	0	true
+q_agency	AI is coming into our lives whether we want it or not	2	inevitable	2	1	0	true
+q_agency	Neither of these are close to how I feel	3	dk	4		1	true
+q_agency	No answer	4	no_answer	5		1	false
+q_community	Have seen	1	realized	1	3	0	true
+q_community	Starting to see	2	realized	1	2	0	true
+q_community	Expect to see soon	3	not_yet	2	1	0	true
+q_community	Don't expect to see	4	not_yet	2	0	0	true
+q_community	Not sure	5	dk	4		1	true
+q_community	No answer	6	no_answer	5		1	false
+q_families	Making it much better	1	better	1	-2	0	true
+q_families	Making it somewhat better	2	better	1	-1	0	true
+q_families	Making it somewhat worse	3	worse	2	1	0	true
+q_families	Making it much worse	4	worse	2	2	0	true
+q_families	Having no effect	5	no_effect	3	0	0	true
+q_families	No answer	6	no_answer	5		1	false
+q_government	Way too much	1	too_much	1	-2	0	true
+q_government	Somewhat too much	2	too_much	1	-1	0	true
+q_government	About the right amount	3	about_right	2	0	0	true
+q_government	Somewhat too little	4	too_little	3	1	0	true
+q_government	Way too little	5	too_little	3	2	0	true
+q_government	Not sure	6	dk	4		1	true
+q_government	No answer	7	no_answer	5		1	false
+q_futures	Already happening	1	likely	1	3	0	true
+q_futures	Likely to happen	2	likely	1	2	0	true
+q_futures	Unlikely to happen	3	unlikely	2	1	0	true
+q_futures	Not at all likely to happen	4	unlikely	2	0	0	true
+q_futures	Not sure	5	dk	4		1	true
+q_futures	No answer	6	no_answer	5		1	false

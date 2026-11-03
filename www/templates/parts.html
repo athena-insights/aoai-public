@@ -1,0 +1,7 @@
+{{define "dateline"}}<dl><dt>Latest survey:</dt><dd>{{template "span" (longSpan .Latest)}}</dd>{{with .NextUpdate}}<dt>Next update:</dt><dd><time datetime="{{.}}">{{longDate .}}</time></dd>{{end}}</dl>{{end}}
+
+{{define "basis"}}{{count .Basis.Surveys}} surveys, totaling {{count .Basis.Interviews}} interviews and {{count .Basis.Responses}} responses, across {{count .Basis.Groups}} demographic groups{{end}}
+
+{{define "photo"}}<figure class="photo"><img src="{{.Root}}static/photos/{{.File}}" alt="{{.Alt}}" width="1800" height="1200" decoding="async"><figcaption>{{.Credit}}</figcaption></figure>{{end}}
+
+{{define "span"}}<time datetime="{{.StartDate}}">{{.Start}}</time>{{with .End}}–<time datetime="{{$.EndDate}}">{{.}}</time>{{end}}{{end}}

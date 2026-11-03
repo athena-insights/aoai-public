@@ -1,0 +1,76 @@
+{{define "content"}}
+<header>
+	<h1>{{.Title}}</h1>
+	<p>
+		Here we provide access to the underlying data for our biweekly tracking survey.
+	</p>
+	<p>
+		This includes {{template "basis" .}}.
+	</p>
+</header>
+<section aria-labelledby="charts">
+	<h2 id="charts">Charts</h2>
+	<p>
+		Each chart on the <a href="{{$.Root}}">Overall</a> and <a href="{{$.Root}}groups/">Groups</a> pages has two downloads to the right of its title.
+		One saves the chart as an image.
+		The other saves its data as a TSV, a plain text file that can be opened by spreadsheet applications.
+		The TSV is organized as <a href="https://tidyr.tidyverse.org/articles/tidy-data.html">tidy data</a>.
+	</p>
+</section>
+<section aria-labelledby="surveys">
+	<h2 id="surveys">Survey releases</h2>
+	<p>
+		For each wave of the survey, we produce a PDF report and publish crosstabs online.
+	</p>
+	<div class="sheet">
+	<table>
+		<thead>
+			<tr><th scope="col">Wave</th><th scope="col" class="left">Survey</th><th scope="col">Adults</th><th scope="col">MOE<sup><a href="#fn1" id="fnref1" role="doc-noteref" aria-label="Note 1">1</a></sup></th><th scope="col">Report</th><th scope="col">Crosstabs</th></tr>
+		</thead>
+		<tbody>
+		{{- range .Waves}}
+			<tr><td>{{waves .}}</td><th scope="row" class="left">{{template "span" (longSpan .)}}</th><td>{{count .Respondents}}</td><td>{{surveyMOE .MOE}}</td><td><a href="{{$.Root}}static/pdfs/americans-on-ai-report-{{.ID}}.pdf">PDF</a></td><td><a href="{{$.Root}}crosstabs/tracker/{{.ID}}/">Web</a></td></tr>
+		{{- end}}
+		</tbody>
+	</table>
+	</div>
+</section>
+<section aria-labelledby="pools">
+	<h2 id="pools">Pooled samples</h2>
+	<p>
+		As described on the <a href="{{$.Root}}methodology/">Methodology</a> page, we also pool two adjacent waves of the survey, which by design share no respondents, to increase precision.
+		These pooled samples are available for analysis, and we provide their sizes and full-sample margins of error in the table below.
+	</p>
+	<div class="sheet">
+	<table>
+		<thead>
+			<tr><th scope="col">Waves</th><th scope="col" class="left">Pool</th><th scope="col">Adults</th><th scope="col">MOE<sup><a href="#fn1" role="doc-noteref" aria-label="Note 1">1</a></sup></th></tr>
+		</thead>
+		<tbody>
+		{{- range .Pools}}
+			<tr><td>{{waves .}}</td><th scope="row" class="left">{{template "span" (longSpan .)}}</th><td>{{count .Respondents}}</td><td>{{surveyMOE .MOE}}</td></tr>
+		{{- end}}
+		</tbody>
+	</table>
+	</div>
+</section>
+<section aria-labelledby="repository">
+	<h2 id="repository">Repository & licenses</h2>
+	<p>
+		Our GitHub repository, <a href="https://github.com/athena-insights/aoai-public">athena-insights/aoai-public</a>, is publicly available and contains the data and code underlying this and other sites.
+	</p>
+	<p>
+		In general, you are free to reuse our data and code with attribution.
+		Our data, presentations of our data, and documentation are licensed for reuse under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license, and our code under the <a href="https://opensource.org/license/mit">MIT License</a>.
+	</p>
+	<p>
+		Our <a href="{{$.Root}}about/#how-to-cite">About</a> page includes examples of how to cite us.
+	</p>
+</section>
+<section role="doc-endnotes" aria-labelledby="footnotes">
+	<h2 id="footnotes">Notes</h2>
+	<ol>
+		<li id="fn1"><p>MOE is the margin of error for all adults. <a href="#fnref1" role="doc-backlink" aria-label="Back to the text"><span aria-hidden="true">↑</span></a></p></li>
+	</ol>
+</section>
+{{- end}}

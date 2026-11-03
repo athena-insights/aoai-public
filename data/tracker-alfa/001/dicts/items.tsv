@@ -1,0 +1,27 @@
+item	item_ord	q_id	label	short
+q_priorities:jobs	1	q_priorities	Improving the job situation	Jobs
+q_priorities:inflation	2	q_priorities	Reducing inflation	Inflation
+q_priorities:ai_harms	3	q_priorities	Dealing with harms from artificial intelligence (AI)	AI harms
+q_priorities:immigration	4	q_priorities	Dealing with immigration	Immigration
+q_priorities:healthcare	5	q_priorities	Improving health care	Health care
+q_priorities:crime	6	q_priorities	Reducing crime	Crime
+q_priorities:climate	7	q_priorities	Dealing with climate change	Climate change
+q_affect:response	8	q_affect	Overall feeling about AI's growing role	Overall feeling
+q_agency:response	9	q_agency	Sense of agency over AI's role	Agency
+q_community:saving_time	10	q_community	People are saving time on everyday tasks	Saving time
+q_community:pressured	11	q_community	People are pressured to do more, faster	Pressured to do more
+q_community:losing_connections	12	q_community	People are losing connections to others	Losing connections
+q_community:real_vs_fake	13	q_community	People are struggling to tell what's real from what's fake	Real vs. fake
+q_community:better_healthcare	14	q_community	People are getting better health care	Better health care
+q_families:job_security	15	q_families	Job security	Jobs
+q_families:outlook	16	q_families	Outlook on the future	Future
+q_families:children	17	q_families	Children's well-being	Children
+q_families:finances	18	q_families	Household finances	Finances
+q_government:children	19	q_government	AI's effects on children and young people	Children
+q_government:environment	20	q_government	AI's environmental footprint, including from data centers	Environment
+q_government:workers	21	q_government	AI's effects on workers and jobs	Workers
+q_government:competitiveness	22	q_government	AI's effect on American competitiveness	Competitiveness
+q_futures:smarter	23	q_futures	AI becoming smarter than humans at most tasks	Superintelligence
+q_futures:unintended	24	q_futures	AI systems behaving in ways their developers did not intend	Loss-of-control
+q_futures:breakthroughs	25	q_futures	AI making major scientific and medical breakthroughs	Breakthroughs
+q_futures:wmd	26	q_futures	AI being used to create weapons of mass destruction	WMDs

@@ -1,0 +1,142 @@
+MKSHELL=rc
+DICTS=dicts
+ROLLUPS=rollups
+
+WAVES=001
+
+all:V: ${WAVES:%=%/$ROLLUPS/stats.tsv}
+
+PROLIFIC_RAW=001/raws/prolific_demographic_export_6a2c623a8985892c0acd6c3a.csv
+PROLIFIC_RAW2=001/raws/prolific_export_6a301b8a796443af2e096532.csv
+GORILLA_RAW=001/raws/data_exp_274048-vall_questionnaire-vih6.csv
+
+001/$ROLLUPS/responses.tsv: $PROLIFIC_RAW $PROLIFIC_RAW2 $GORILLA_RAW 001/responses.sql
+	mkdir -p 001/$ROLLUPS
+	sqlite3 :memory: <<EOF
+	.import --csv $PROLIFIC_RAW demo1
+	.import --csv $PROLIFIC_RAW2 demo2
+	.mode tabs
+	.import $GORILLA_RAW resp
+	.headers on
+	.output $target
+	.read 001/responses.sql
+	EOF
+
+ACS=upstream/acs-1y-2024
+ACS_VINTAGE=2024
+ACS_AGESEX=`{ls $ACS/*.B01001-*.csv}
+ACS_WHITE=`{ls $ACS/*.B01001A-*.csv}
+ACS_BLACK=`{ls $ACS/*.B01001B-*.csv}
+ACS_AIAN=`{ls $ACS/*.B01001C-*.csv}
+ACS_ASIAN=`{ls $ACS/*.B01001D-*.csv}
+ACS_NHPI=`{ls $ACS/*.B01001E-*.csv}
+ACS_SOR=`{ls $ACS/*.B01001F-*.csv}
+ACS_MULTI=`{ls $ACS/*.B01001G-*.csv}
+
+%/$ROLLUPS/targets.tsv: $ACS_AGESEX $ACS_WHITE $ACS_BLACK $ACS_AIAN $ACS_ASIAN $ACS_NHPI $ACS_SOR $ACS_MULTI
+	mkdir -p $stem/$ROLLUPS
+	sqlite3 :memory: <<EOF
+	.bail on
+	-- import the base sex-by-age table as (label, est, moe); --skip 1 drops the header
+	CREATE TABLE agesex(label,est,moe);
+	.import --csv --skip 1 $ACS_AGESEX agesex
+	-- consolidate the 7 race-iteration tables into one, tagging each row's ethnicity
+	-- bucket by its SOURCE table: White/Black/Asian/Mixed map 1:1; AIAN + NHPI + some-
+	-- other-race fold into "Other".
+	CREATE TABLE race(bucket,label,est);
+	CREATE TABLE _t(label,est,moe);
+	.import --csv --skip 1 $ACS_WHITE _t
+	INSERT INTO race SELECT 'White',label,est FROM _t; DELETE FROM _t;
+	.import --csv --skip 1 $ACS_BLACK _t
+	INSERT INTO race SELECT 'Black',label,est FROM _t; DELETE FROM _t;
+	.import --csv --skip 1 $ACS_ASIAN _t
+	INSERT INTO race SELECT 'Asian',label,est FROM _t; DELETE FROM _t;
+	.import --csv --skip 1 $ACS_MULTI _t
+	INSERT INTO race SELECT 'Mixed',label,est FROM _t; DELETE FROM _t;
+	.import --csv --skip 1 $ACS_AIAN _t
+	INSERT INTO race SELECT 'Other',label,est FROM _t; DELETE FROM _t;
+	.import --csv --skip 1 $ACS_NHPI _t
+	INSERT INTO race SELECT 'Other',label,est FROM _t; DELETE FROM _t;
+	.import --csv --skip 1 $ACS_SOR _t
+	INSERT INTO race SELECT 'Other',label,est FROM _t; DELETE FROM _t;
+	-- strip the non-breaking-space (U+00A0) indentation, so every later label parse
+	-- is plain trim()/CAST
+	UPDATE agesex SET label = trim(replace(label, char(160), ''));
+	UPDATE race   SET label = trim(replace(label, char(160), ''));
+	-- ppl: one row per (sex, age-band) cell of the base table.
+	--   sex    = most recent 'Male:'/'Female:' section header at or above the row
+	--            (running max of the header's rowid via a window; the later one wins)
+	--   age_lo = the band's lower-bound year parsed from its label ('18 and 19 years'
+	--            -> 18; 'Under 5 years' and the ':' headers -> 0)
+	--   bucket = our 4 reporting bands; <18 (and 0-parses) fall to NULL and drop $ROLLUPS
+	--   WHERE  = discard the 'Total:'/'Male:'/'Female:' header rows (they contain ':')
+	CREATE TEMP TABLE ppl AS
+	 WITH a AS (
+	   SELECT label t, CAST(REPLACE(est,',','') AS INT) v, CAST(label AS INT) age_lo,
+	     max(CASE WHEN label='Male:'   THEN rowid END) OVER (ORDER BY rowid) m_at,
+	     max(CASE WHEN label='Female:' THEN rowid END) OVER (ORDER BY rowid) f_at
+	   FROM agesex)
+	 SELECT v, age_lo,
+	   CASE WHEN coalesce(f_at,-1) > coalesce(m_at,-1) THEN 'Female' ELSE 'Male' END sex,
+	   CASE WHEN age_lo BETWEEN 18 AND 34 THEN '18-34'
+	        WHEN age_lo BETWEEN 35 AND 49 THEN '35-49'
+	        WHEN age_lo BETWEEN 50 AND 64 THEN '50-64'
+	        WHEN age_lo >= 65            THEN '65+' END bucket
+	 FROM a WHERE t NOT LIKE '%:%';
+	-- eth: adult (18+) population per ethnicity bucket, from the consolidated table --
+	-- the same lower-bound-age >= 18 rule applies uniformly to all 7 source tables
+	CREATE TEMP TABLE eth AS
+	 SELECT bucket, sum(CAST(REPLACE(est,',','') AS INT)) n FROM race
+	 WHERE CAST(label AS INT) >= 18 GROUP BY bucket;
+	-- GUARD _ex (exhaustive): every base-table DATA row must be a recognized band or
+	-- header; a new/renamed census category that parses to neither trips this CHECK
+	CREATE TABLE _ex(bad CHECK(bad IS 0));
+	INSERT INTO _ex SELECT count(*) FROM agesex
+	 WHERE label NOT LIKE '%:%' AND CAST(label AS INT)=0 AND label NOT LIKE 'Under %';
+	-- d: the 11 marginal counts in one row, ready for the emit below
+	CREATE TEMP TABLE d AS SELECT
+	 (SELECT sum(v) FROM ppl WHERE sex='Male'   AND bucket IS NOT NULL) m18,
+	 (SELECT sum(v) FROM ppl WHERE sex='Female' AND bucket IS NOT NULL) f18,
+	 (SELECT sum(v) FROM ppl WHERE bucket='18-34') a1834,
+	 (SELECT sum(v) FROM ppl WHERE bucket='35-49') a3549,
+	 (SELECT sum(v) FROM ppl WHERE bucket='50-64') a5064,
+	 (SELECT sum(v) FROM ppl WHERE bucket='65+')   a65,
+	 (SELECT n FROM eth WHERE bucket='White') wh,
+	 (SELECT n FROM eth WHERE bucket='Black') bl,
+	 (SELECT n FROM eth WHERE bucket='Asian') asi,
+	 (SELECT n FROM eth WHERE bucket='Mixed') mx,
+	 (SELECT n FROM eth WHERE bucket='Other') ot;
+	-- GUARD _pos (positivity): a clean parse cannot yield a zero/empty margin -- this
+	-- catches the silent all-zero failure that the partition CHECK alone would pass
+	CREATE TABLE _pos(ok CHECK(ok IS 1));
+	INSERT INTO _pos SELECT min(x>0) FROM (SELECT m18 x FROM d UNION ALL SELECT f18 FROM d
+	 UNION ALL SELECT a1834 FROM d UNION ALL SELECT a65 FROM d UNION ALL SELECT wh FROM d UNION ALL SELECT ot FROM d);
+	-- GUARD _p (partition): the 5 race buckets' 18+ total must equal the base table's
+	-- 18+ total (they partition the same universe), or a bucket mapping is wrong
+	CREATE TABLE _p(diff CHECK(diff IS 0));
+	INSERT INTO _p SELECT (m18+f18)-(wh+bl+asi+mx+ot) FROM d;
+	.headers on
+	.mode tabs
+	.output $target
+	SELECT 'sex' dim,'Female' value,round(1.0*f18/(m18+f18),6) target,f18 count,'ACS 1-yr B01001' source,'$ACS_VINTAGE' vintage,'US adults 18+' universe,'' note FROM d
+	UNION ALL SELECT 'sex','Male',round(1.0*m18/(m18+f18),6),m18,'ACS 1-yr B01001','$ACS_VINTAGE','US adults 18+','' FROM d
+	UNION ALL SELECT 'age','18-34',round(1.0*a1834/(m18+f18),6),a1834,'ACS 1-yr B01001','$ACS_VINTAGE','US adults 18+','' FROM d
+	UNION ALL SELECT 'age','35-49',round(1.0*a3549/(m18+f18),6),a3549,'ACS 1-yr B01001','$ACS_VINTAGE','US adults 18+','' FROM d
+	UNION ALL SELECT 'age','50-64',round(1.0*a5064/(m18+f18),6),a5064,'ACS 1-yr B01001','$ACS_VINTAGE','US adults 18+','' FROM d
+	UNION ALL SELECT 'age','65+',round(1.0*a65/(m18+f18),6),a65,'ACS 1-yr B01001','$ACS_VINTAGE','US adults 18+','' FROM d
+	UNION ALL SELECT 'eth','White',round(1.0*wh/(wh+bl+asi+mx+ot),6),wh,'ACS 1-yr B01001A','$ACS_VINTAGE','US adults 18+','White alone; Hispanic origin not separated' FROM d
+	UNION ALL SELECT 'eth','Black',round(1.0*bl/(wh+bl+asi+mx+ot),6),bl,'ACS 1-yr B01001B','$ACS_VINTAGE','US adults 18+','' FROM d
+	UNION ALL SELECT 'eth','Asian',round(1.0*asi/(wh+bl+asi+mx+ot),6),asi,'ACS 1-yr B01001D','$ACS_VINTAGE','US adults 18+','' FROM d
+	UNION ALL SELECT 'eth','Mixed',round(1.0*mx/(wh+bl+asi+mx+ot),6),mx,'ACS 1-yr B01001G','$ACS_VINTAGE','US adults 18+','two or more races' FROM d
+	UNION ALL SELECT 'eth','Other',round(1.0*ot/(wh+bl+asi+mx+ot),6),ot,'ACS 1-yr B01001C+E+F','$ACS_VINTAGE','US adults 18+','AIAN + NHPI + some-other-race, all alone' FROM d;
+	EOF
+
+%/$ROLLUPS/stats.tsv %/$ROLLUPS/nets.tsv %/$ROLLUPS/weights.tsv %/$ROLLUPS/wave.tsv: %/$ROLLUPS/responses.tsv %/$ROLLUPS/targets.tsv %/$DICTS/items.tsv %/$DICTS/options.tsv %/$DICTS/netdefs.tsv rollups.R
+	u Rscript rollups.R $stem
+
+clean:V:
+	for(w in $WAVES) rm -f $w/$ROLLUPS/^(responses.tsv targets.tsv stats.tsv nets.tsv weights.tsv wave.tsv)
+
+BUILT=`{for(w in $WAVES) echo $w/$ROLLUPS}
+
+<../study.mk

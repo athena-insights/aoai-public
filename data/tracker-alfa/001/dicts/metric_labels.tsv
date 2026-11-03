@@ -1,0 +1,29 @@
+q_id	metric	label
+q_priorities	high_priority	TOTAL high priority
+q_priorities	low_priority	TOTAL lower priority
+q_priorities	dk	Not sure
+q_priorities	net_priority	NET priority
+q_affect	excited	TOTAL excited
+q_affect	concerned	TOTAL concerned
+q_affect	dk	None of these
+q_affect	net_concern	NET concerned
+q_agency	can_shape	TOTAL can shape
+q_agency	inevitable	TOTAL inevitable
+q_agency	net_inevitable	NET inevitable
+q_community	realized	TOTAL realized
+q_community	not_yet	TOTAL not yet
+q_community	dk	Not sure
+q_community	net_realized	NET realized
+q_families	better	TOTAL better
+q_families	worse	TOTAL worse
+q_families	no_effect	TOTAL no effect
+q_families	net_worse	NET worse
+q_government	too_much	TOTAL too much
+q_government	about_right	TOTAL about right
+q_government	too_little	TOTAL too little
+q_government	dk	Not sure
+q_government	net_too_little	NET too little
+q_futures	likely	TOTAL likely
+q_futures	unlikely	TOTAL unlikely
+q_futures	dk	Not sure
+q_futures	net_likely	NET likely

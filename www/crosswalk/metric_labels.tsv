@@ -1,0 +1,15 @@
+q_id	metric	label
+q_priorities	high_priority	Top or important priority
+q_priorities	low_priority	Not too important or not a priority
+q_affect	concerned	Concerned
+q_affect	excited	Excited
+q_agency	inevitable	Coming whether we want it or not
+q_agency	can_shape	We can shape it
+q_community	realized	Seeing it or starting to
+q_community	not_yet	Not yet
+q_families	worse	Making it worse
+q_families	better	Making it better
+q_government	too_little	Too little
+q_government	too_much	Too much
+q_futures	likely	Likely or already happening
+q_futures	unlikely	Unlikely

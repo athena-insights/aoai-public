@@ -1,0 +1,11 @@
+#!/usr/bin/env rc
+wave=$1; raw=$2; target=$3
+sqlite3 :memory: <<EOF
+.bail on
+.import --csv $raw resp
+.mode tabs
+.import $wave/codebook.tsv cb
+.headers on
+.output $target
+.read $wave/responses.sql
+EOF

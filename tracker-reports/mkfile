@@ -1,0 +1,29 @@
+MKSHELL=rc
+DICTS=dicts
+ROLLUPS=rollups
+
+WAVES=tracker-alfa/001 tracker-bravo/001 tracker-bravo/002 tracker-bravo/003 tracker-bravo/004 tracker-bravo/005 tracker-bravo/006 tracker-bravo/007 tracker-bravo/008 tracker-bravo/009
+REPORT=`{ls cmd/report/*.go}
+
+all:V: ${WAVES:%=out/%/report.pdf}
+
+out/%/report.typ: ../data/%/$ROLLUPS/stats.tsv ../data/%/$ROLLUPS/nets.tsv ../data/%/$ROLLUPS/wave.tsv ../data/%/$DICTS/stems.tsv ../data/%/$DICTS/items.tsv ../data/%/$DICTS/options.tsv ../data/%/$DICTS/netdefs.tsv ../data/%/$DICTS/banner.tsv ../data/%/$DICTS/metric_labels.tsv prose/%/intro.typ prose/%/topline.typ prose/%/crosstabs.typ prose/%/questionnaire.typ prose/%/methodology.typ prose/%/sample.typ $REPORT
+	mkdir -p out/$stem
+	go run ./cmd/report --dicts ../data/$stem/$DICTS --rollups ../data/$stem/$ROLLUPS --prose prose/$stem > $target
+
+KLIM=../fonts/Klim-Order-26050707/OTF
+FONTPATHS=`{echo --font-path Libre-Franklin/OTF; if(test -d $KLIM) echo --font-path $KLIM}
+
+out/%/report.pdf: out/%/report.typ report.typ assets/sparkles-and-stripes.svg
+	fieldend=`{u awk -F'	' '$1=="field_end"{print $2}' ../data/$stem/$ROLLUPS/wave.tsv}
+	SOURCE_DATE_EPOCH=`{sqlite3 :memory: 'select strftime(''%s'', '''$fieldend''')'}
+	typst compile --root .. $FONTPATHS out/$stem/report.typ $target
+
+clean:V:
+	for(w in $WAVES) rm -f out/$w/report.typ out/$w/report.pdf
+
+check:V:
+	mk clean && mk all
+	changed=`{git status --short -- out}
+	if(~ $#changed 0) echo check: every committed report rebuilt identical
+	if not { echo 'check: the rebuild changed these files:' >[1=2]; git status --short -- out; exit 1 }

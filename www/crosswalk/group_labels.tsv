@@ -1,0 +1,20 @@
+grp	label
+total	All adults
+sex=Female	Women
+sex=Male	Men
+party=Democrat	Democrats
+party=Republican	Republicans
+party=Independent	Independents
+age=18-34	18–34
+age=35-49	35–49
+age=50-64	50–64
+age=65+	65+
+educ=HS or less	High school or less
+educ=Some college	Some college
+educ=BA+	Bachelor's degree or more
+income=<50k	Under $50,000
+income=50k to <100k	$50,000–$99,999
+income=100k+	$100,000 or more
+eth=White, non-Hispanic	White
+eth=Black, non-Hispanic	Black
+eth=Hispanic	Hispanic

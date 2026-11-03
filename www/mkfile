@@ -1,0 +1,88 @@
+MKSHELL=rc
+
+WAVES=001 002 003 004 005 006 007 008 009
+POOLS=001+002 002+003 003+004 004+005 005+006 006+007 007+008 008+009
+NEXT_UPDATE=2026-11-17
+
+ORIGIN=
+
+DATA=../data/tracker-bravo
+REPORTS=../tracker-reports/out/tracker-bravo
+
+FONTS=american-grotesk-regular american-grotesk-bold american-grotesk-condensed-bold
+ORDER=../fonts/Klim-Order-26050707/WOFF2
+ORDERED=${FONTS:%=$ORDER/%.woff2}
+
+all:V: $ORDERED
+	rm -rf build public
+	mkdir -p build/static/fonts build/static/pdfs
+	cp -R static/. build/static
+	for(f in $FONTS) cp $ORDER/$f.woff2 build/static/fonts/
+	for(w in $WAVES) cp $REPORTS/$w/report.pdf build/static/pdfs/americans-on-ai-report-$w.pdf
+	go run ./cmd/aoai-build -data $DATA -static build/static -waves $"WAVES -pools $"POOLS -next-update $"NEXT_UPDATE -origin $"ORIGIN
+
+serve:V: all
+	go run ./cmd/aoai-serve -dir public -addr localhost:8000
+
+SRC=cmd crosswalk pages render resolve site static templates view
+
+watch:V:
+	watchexec --restart --shell=none --watch=^$SRC -- mk serve DATA=$DATA REPORTS=$REPORTS
+
+clean:V:
+	rm -rf build public
+
+check:V:
+	mk clean && mk all
+	echo check: the site built
+
+$ORDERED:
+	@{ cd ../fonts && mk unpack-fonts }
+
+PHOTOS=`{cd photos && ls *.jpg}
+MAGICK=magick
+
+photos:V: ${PHOTOS:%=static/photos/%}
+
+static/photos/%.jpg: photos/%.jpg
+	$MAGICK $prereq -auto-orient -gravity center -crop 3:2 +repage -resize '1800x>' -quality 72 -interlace JPEG -strip $target
+
+PRESS=the-hill daily-caller the-atlantic puck the-new-yorker
+INK='#2e2e2e'         # styles-base.html's --ink
+PRESSINK='#535353'    # styles-base.html's --ink-2, the ink 20% toward the paper in OKLab, as hex
+PAPER='#fff'          # styles-base.html's --paper
+PRESSLINE=24          # styles-base.html's --step-0 times --leading-body: a line of the press block, in px
+USVG=usvg --quiet --skip-system-fonts --indent 0 --coordinates-precision 3
+SED=u sed -E
+
+logos:V: static/logos/athena-insights.svg ${PRESS:%=static/logos/press/%.svg}
+card:V: static/card.png
+
+static/card.png:D: static/logos/americans-on-ai.svg
+	{ echo '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="-32.5 -16.625 130 68.25"><rect x="-32.5" y="-16.625" width="130" height="68.25" fill="'$PAPER'"/>'; cat $prereq; echo '</svg>' } | resvg --resources-dir . - $target
+
+PLEX=https://raw.githubusercontent.com/google/fonts/137470e1c67e8632d41997d10e620eee1e023a80/ofl/ibmplexsanscondensed/IBMPlexSansCondensed-Bold.ttf
+
+static/logos/athena-insights.svg:D: logos/athena-insights.svg
+	font=/tmp/plex.$pid.ttf
+	curl -sSfL -o $font $PLEX
+	$USVG --use-font-file $font --font-family 'IBM Plex Sans Condensed' $prereq -c | $SED 's/<svg width="([^"]*)" height="([^"]*)"/<svg viewBox="0 0 \1 \2" width="\1" height="\2"/; s/(fill|stroke)="#[0-9a-f]+"/\1="'$INK'"/g' >$target
+	rm -f $font
+
+${PRESS:%=static/logos/press/%.svg}:D: ${PRESS:%=logos/press/%.svg}
+	mkdir -p static/logos/press
+	boxes=static/logos/press/boxes.tmp
+	rm -f $boxes
+	for(p in $PRESS) {
+		$USVG logos/press/$p.svg -c | $SED 's/(<svg[^>]*>)/\1<g id="art">/; s/<\/svg>/<\/g><\/svg>/' >static/logos/press/$p.svg.tmp
+		echo $p `{resvg --query-all static/logos/press/$p.svg.tmp | $SED -n 's/^art,//p' | tr , ' '} >>$boxes
+	}
+	sizes=static/logos/press/sizes.tmp
+	awk -v 'line='$PRESSLINE '{ n[NR]=$1; r[NR]=$4/$5; if (NR == 1 || r[NR] < m) m=r[NR] } END { for (i=1; i<=NR; i++) { h=line*sqrt(m/r[i]); printf "%s %.3f %.3f\n", n[i], h*r[i], h } }' $boxes >$sizes
+	for(p in $PRESS) {
+		box=`{$SED -n 's/^'^$p^' //p' $boxes}
+		size=`{$SED -n 's/^'^$p^' //p' $sizes}
+		$SED 's/<svg width="[^"]*" height="[^"]*"/<svg viewBox="'^$"box^'" width="'^$size(1)^'" height="'^$size(2)^'"/; s/<g id="art">//; s/<\/g><\/svg>/<\/svg>/; s/(fill|stroke|stop-color)="#[0-9a-f]+"/\1="'^$PRESSINK^'"/g' static/logos/press/$p.svg.tmp >static/logos/press/$p.svg
+		rm static/logos/press/$p.svg.tmp
+	}
+	rm $boxes $sizes

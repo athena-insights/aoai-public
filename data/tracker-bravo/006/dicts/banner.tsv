@@ -1,0 +1,24 @@
+dim	dim_ord	dim_label	value	value_ord	label	pinned
+total	0	Total	total	0	Total	
+sex	1	Sex	Female	1	Female	
+sex	1	Sex	Male	2	Male	
+party	2	Party	Democrat	1	Dem	
+party	2	Party	Republican	2	Rep	
+party	2	Party	Independent	3	Ind	
+age	3	Age	18-34	1	18–34	
+age	3	Age	35-49	2	35–49	
+age	3	Age	50-64	3	50–64	
+age	3	Age	65+	4	65+	
+eth	4	Ethnicity	White, non-Hispanic	1	White	true
+eth	4	Ethnicity	Black, non-Hispanic	2	Black	true
+eth	4	Ethnicity	Hispanic	3	Hispanic	true
+eth	4	Ethnicity	Asian-Pacific Islander, non-Hispanic	4	Asian/PI	
+eth	4	Ethnicity	2+, non-Hispanic	5	Two or more	
+eth	4	Ethnicity	Other, non-Hispanic	6	Other	
+party	2	Party	Unknown	4	Unknown	
+educ	5	Education	HS or less	1	HS or less	
+educ	5	Education	Some college	2	Some college	
+educ	5	Education	BA+	3	BA+	
+income	6	Household income	<50k	1	<50k	
+income	6	Household income	50k to <100k	2	50k-<100k	
+income	6	Household income	100k+	3	100k+	
