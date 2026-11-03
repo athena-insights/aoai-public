@@ -2,16 +2,15 @@
 ::: intro
 Overall, *Americans are wary of AI*{.finding}: they are far more concerned than excited; majorities say it's having negative impacts in their communities and making family life worse; and most see dealing with its harms as a priority for government action.
 
-Two news events have shifted these views since we began tracking: [OpenAI's disclosure in July](https://www.reuters.com/business/its-ai-agent-spent-days-hacking-company-sources-say-openai-did-not-notice-week-2026-07-24/) that two of its models had escaped their testing environment and hacked another company, Hugging Face, and [the resignation of an Anthropic employee, Jacob Coxon, in September](https://www.wsj.com/tech/ai/anthropic-researcher-quits-over-out-of-control-ai-fears-707b7628).
+These views visibily shifted in the wake of two events: [OpenAI's disclosure in July](https://www.reuters.com/business/its-ai-agent-spent-days-hacking-company-sources-say-openai-did-not-notice-week-2026-07-24/) that two of its models had escaped their testing environment and hacked another company, Hugging Face, and [the resignation of an Anthropic employee, Jacob Coxon, in September](https://www.wsj.com/tech/ai/anthropic-researcher-quits-over-out-of-control-ai-fears-707b7628).
 
-{{/* The takeaways, one per block in the page's order, each a run-in in bold with its figures: levels from the latest pool, moves between the waves on either side of an event or from the first wave. */}}
 Here are some key takeaways from our surveys so far:
 
-- *Most Americans feel they have little say.* Among all adults, {{.Share "inevitable" "008+009"}} say AI is coming into their lives whether they want it or not, and {{.Share "can-shape" "008+009"}} say people like them can shape it.
-- *Concern rose after the Hugging Face disclosure.* The excited share fell from {{.Share "excited" "002"}} to {{.Share "excited" "003"}}, and the very concerned rose from {{.Share "very-concerned" "002"}} to {{.Share "very-concerned" "003"}}.
-- *Loss of control is the scenario rising fastest.* Among all adults, {{.Share "already-unintended" "009"}} say AI behaving in ways its developers did not intend is already happening, up from {{.Share "already-unintended" "001"}} in {{.When "001"}}.
-- *Jobs and misinformation stand out.* Among all adults, {{.Share "worse-jobs" "008+009"}} say AI is making job security worse and {{.Share "better-jobs" "008+009"}} better, and {{.Share "seeing-fake" "008+009"}} are seeing, or starting to see, people struggle to tell what's real from fake.
-- *Most want the government to do more.* Among all adults, {{.Share "any-ai-harms" "008+009"}} call dealing with AI harms a top or important priority. On children and young people, {{.Share "little-children" "008+009"}} say the government is doing too little and {{.Share "much-children" "008+009"}} too much.
+- *Most Americans feel they have little say about AI in their lives.* Among all adults, {{.Share "inevitable" "008+009"}} say that AI is coming into their lives whether they want it or not, and {{.Share "can-shape" "008+009"}} say that people like them can shape it.
+- *Concern rose after the Hugging Face disclosure.* The share of American adults who are excited about AI fell from {{.Share "excited" "002"}} to {{.Share "excited" "003"}}, and the very concerned share rose from {{.Share "very-concerned" "002"}} to {{.Share "very-concerned" "003"}}.
+- *Loss of control of AI systems is already happening.* Among all adults, {{.Share "already-unintended" "009"}} say that AI behaving in ways its developers did not intend is already happening, up from {{.Share "already-unintended" "001"}} in {{.When "001"}}.
+- *Jobs and misinformation are Americans most acute concerns.* Among all adults, {{.Share "worse-jobs" "008+009"}} say AI is making job security worse, and {{.Share "seeing-fake" "008+009"}} are seeing, or starting to see, people struggle to tell what's real from fake.
+- *Most want the government to do more.* Among all adults, {{.Share "any-ai-harms" "008+009"}} call dealing with AI harms a top or important priority. On children and young people, {{.Share "little-children" "008+009"}} say that the government is doing too little and only {{.Share "much-children" "008+009"}} too much.
 
 Our findings below draw on *{{text "basis" .}}*, which we break down in our [groups](groups/) page.
 
