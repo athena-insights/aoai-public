@@ -1,5 +1,4 @@
 {{/* Groups' body: the introduction and the sections, in djot, which groups.html places with {{body}}. */}}
-{{/* The introduction, as the Overall page's: a lede on which dimensions divide most, then the takeaways as a list, one per section in the sections' order, each a run-in in bold with its figures from the latest pool, no highlighter. The dimensions the lede names are the four whose gaps are widest and most often beyond the margin on the latest pool. Sex is not among them, and the lede says so. */}}
 ::: intro
 Across the groups of Americans we survey, age, race, education, and party show the clearest differences in how people feel about AI, what they see it doing in their lives, and what they want the government to do about it.
 
